@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:title" content="You're Invited — Priya & Arjun's Wedding" />
+  <meta property="og:description" content="Join us as we celebrate the sacred union of Priya & Arjun on August 24, 2026." />
+  <meta property="og:image" content="https://YOUR-HOSTED-IMAGE-URL-HERE.jpg" />
+  <meta property="og:url" content="https://YOUR-WEDDING-PAGE-URL-HERE.com" />
+  <meta property="og:type" content="website" />
+  <title>Pelli Patrika — Priya &amp; Arjun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ==========================================================
+     THEME VARIABLES  (concept 1–5 each gets one palette)
+     ========================================================== */
+  :root {
+    --p:#9E1B32; --s:#FFC72C; --a:#D4AF37;
+    --bg:#FFF8E7; --h1:#7B0D20; --h2:#9E1B32; --h3:#C4861A;
+    --td:#3A0010; --bdr:#D4AF37; --card:rgba(158,27,50,.07);
+    --sc1:#C4861A; --sc2:#9E1B32; --tul:#FFC72C;
+  }
+  [data-theme="kanchi"]{
+    --p:#005A36; --s:#C71585; --a:#D4AF37;
+    --bg:#F3EFE8; --h1:#003D25; --h2:#005A36; --h3:#96006A;
+    --td:#001E10; --bdr:#D4AF37; --card:rgba(0,90,54,.07);
+    --sc1:#005A36; --sc2:#C71585; --tul:#C71585;
+  }
+  [data-theme="marigold"]{
+    --p:#E65100; --s:#F9A825; --a:#4CAF50;
+    --bg:#FFFDE7; --h1:#BF360C; --h2:#E65100; --h3:#F9A825;
+    --td:#3E1C00; --bdr:#4CAF50; --card:rgba(230,81,0,.07);
+    --sc1:#F9A825; --sc2:#E65100; --tul:#F9A825;
+  }
+  [data-theme="peacock"]{
+    --p:#00695C; --s:#4A148C; --a:#B8960C;
+    --bg:#E8F5F3; --h1:#00352E; --h2:#00695C; --h3:#4A148C;
+    --td:#001A14; --bdr:#B8960C; --card:rgba(0,105,92,.07);
+    --sc1:#00695C; --sc2:#4A148C; --tul:#00BCD4;
+  }
+  [data-theme="ivory"]{
+    --p:#8B6914; --s:#C5A028; --a:#C5A028;
+    --bg:#FFFDD0; --h1:#5C420A; --h2:#8B6914; --h3:#C5A028;
+    --td:#3D2B00; --bdr:#C5A028; --card:rgba(139,105,20,.08);
+    --sc1:#C5A028; --sc2:#8B6914; --tul:#E6C280;
+  }
+
+  /* ==========================================================
+     RESET
+     ========================================================== */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--td);overflow-x:hidden;transition:background .5s,color .5s}
+
+  /* ==========================================================
+     CONCEPT TAB BAR
+     ========================================================== */
+  .cbar{
+    position:fixed;top:0;left:0;right:0;z-index:9000;
+    display:flex;background:rgba(8,8,8,.93);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    box-shadow:0 2px 20px rgba(0,0,0,.5);overflow-x:auto;scrollbar-width:none;
+  }
+  .cbar::-webkit-scrollbar{display:none}
+  .ctab{
+    flex:1 0 68px;padding:10px 7px;border:none;background:transparent;
+    color:rgba(255,255,255,.42);font-family:'Lato',sans-serif;font-size:.6rem;
+    letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+    border-bottom:3px solid transparent;text-align:center;line-height:1.35;
+    transition:all .25s;white-space:nowrap;
+  }
+  .ctab:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+  .ctab.on{color:#fff;font-weight:700;border-bottom-color:var(--tul)}
+  .ctab::before{content:'';display:block;width:7px;height:7px;border-radius:50%;margin:0 auto 4px;opacity:.55;transition:opacity .25s}
+  .ctab.on::before{opacity:1}
+  .ctab[data-c="doors"]::before   {background:#FFC72C}
+  .ctab[data-c="seal"]::before    {background:#C71585}
+  .ctab[data-c="lotus"]::before   {background:#F9A825}
+  .ctab[data-c="scroll"]::before  {background:#00BCD4}
+  .ctab[data-c="env"]::before     {background:#E6C280}
+
+  /* ==========================================================
+     REPLAY BUTTON
+     ========================================================== */
+  #replay{
+    position:fixed;bottom:22px;right:18px;z-index:8999;
+    padding:10px 22px;background:var(--a);color:#2a1800;
+    font-family:'Playfair Display',serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.1em;border:none;border-radius:40px;cursor:pointer;
+    box-shadow:0 4px 18px rgba(0,0,0,.22);
+    opacity:0;pointer-events:none;transition:opacity .4s,transform .3s;
+  }
+  #replay.on{opacity:1;pointer-events:auto}
+  #replay:hover{transform:scale(1.06)}
+
+  /* ==========================================================
+     SHARED OPENER WRAPPER
+     ========================================================== */
+  .opener{
+    position:fixed;inset:0;z-index:1000;
+    display:none;align-items:center;justify-content:center;
+    overflow:hidden;padding-top:40px;cursor:pointer;
+  }
+  .opener.on{display:flex}
+  .opener.out{pointer-events:none;animation:fadeOut .8s ease forwards}
+  @keyframes fadeOut{to{opacity:0}}
+
+  /* shared pulse for all CTAs */
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+  .cta-text{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:clamp(.82rem,2.4vw,.98rem);letter-spacing:.14em;
+    color:rgba(255,255,255,.6);text-align:center;
+    animation:pulse 2s ease infinite;transition:opacity .4s;
+  }
+
+  /* "Enter" button on each opener */
+  .enter-btn{
+    position:absolute;bottom:7%;left:50%;
+    transform:translateX(-50%) translateY(12px);
+    padding:13px 44px;background:var(--a);color:#2a1800;
+    font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;border:none;border-radius:50px;
+    cursor:pointer;box-shadow:0 6px 26px rgba(0,0,0,.25);
+    opacity:0;pointer-events:none;
+    transition:opacity .5s,transform .5s,box-shadow .3s;
+    z-index:20;white-space:nowrap;
+  }
+  .enter-btn.on{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+  .enter-btn:hover{box-shadow:0 10px 34px rgba(0,0,0,.35)}
+
+  /* ==========================================================
+     CONCEPT 1 — DOUBLE DOORS
+     ========================================================== */
+  #op-doors{background:linear-gradient(140deg,#180004 0%,#2d000a 100%)}
+
+  .dw{position:absolute;inset:40px 0 0;display:flex;perspective:1400px}
+
+  .door{
+    flex:1;height:100%;position:relative;overflow:hidden;
+    transition:transform 1.4s cubic-bezier(.25,.1,.1,1);will-change:transform;
+  }
+  .door-l{
+    background:linear-gradient(to right,#3a0008 0%,#700010 55%,#8c0014 100%);
+    transform-origin:left center;border-right:2px solid #D4AF37;
+  }
+  .door-r{
+    background:linear-gradient(to left,#3a0008 0%,#700010 55%,#8c0014 100%);
+    transform-origin:right center;border-left:2px solid #D4AF37;
+  }
+  /* carved-panel borders via pseudo */
+  .door::before,.door::after{
+    content:'';position:absolute;border:1px solid rgba(212,175,55,.32);border-radius:4px;
+  }
+  .door::before{inset:8% 10% 54% 10%}
+  .door::after {inset:52% 10% 8% 10%}
+  .door-panel{position:absolute;border:1px solid rgba(212,175,55,.18);border-radius:2px}
+  .door-panel.t{inset:11% 14% 57% 14%}
+  .door-panel.b{inset:55% 14% 11% 14%}
+  .door-knob{
+    position:absolute;top:50%;width:15px;height:15px;border-radius:50%;
+    background:radial-gradient(circle,#F5D060 30%,#A0780A 100%);
+    box-shadow:0 2px 8px rgba(0,0,0,.5);transform:translateY(-50%);
+  }
+  .door-l .door-knob{right:13px}
+  .door-r .door-knob{left:13px}
+
+  /* top ornamental strip */
+  .door-topbar{
+    position:absolute;top:0;left:0;right:0;height:40px;z-index:3;
+    background:linear-gradient(to right,#2d0008,#6e1200,#D4AF37,#6e1200,#2d0008);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:.7rem;letter-spacing:.38em;color:rgba(255,255,255,.65);
+    pointer-events:none;
+  }
+  .doors-gem{
+    position:absolute;top:50px;left:50%;transform:translateX(-50%);
+    font-size:2.2rem;color:rgba(212,175,55,.55);z-index:4;pointer-events:none;
+  }
+  .doors-cta{
+    position:absolute;bottom:9%;left:50%;transform:translateX(-50%);
+    z-index:10;text-align:center;pointer-events:none;transition:opacity .4s;
+  }
+  .doors-cta .label{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:.76rem;
+    letter-spacing:.3em;text-transform:uppercase;color:rgba(212,175,55,.75);
+    animation:pulse 2s ease infinite;display:block;margin-bottom:6px;
+  }
+  .doors-cta .tap{
+    font-family:'Playfair Display',serif;font-size:clamp(1rem,3.5vw,1.5rem);
+    color:rgba(255,255,255,.85);
+  }
+  /* opened */
+  .dw.opened .door-l{transform:rotateY(-108deg)}
+  .dw.opened .door-r{transform:rotateY(108deg)}
+
+  /* ==========================================================
+     CONCEPT 2 — WAX SEAL
+     ========================================================== */
+  #op-seal{
+    background:radial-gradient(ellipse at center,#18002a 0%,#0a0015 70%);
+    flex-direction:column;gap:22px;
+  }
+  .seal-rings{position:relative;display:flex;align-items:center;justify-content:center}
+  .sring{
+    position:absolute;border-radius:50%;border:1px solid rgba(212,175,55,.28);
+  }
+  .sring1{width:270px;height:270px;animation:spin 20s linear infinite}
+  .sring2{width:220px;height:220px;animation:spin 14s linear infinite reverse;border-color:rgba(212,175,55,.16)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .seal{
+    width:172px;height:172px;border-radius:50%;position:relative;
+    background:radial-gradient(circle at 35% 32%,#c71585 0%,#80005a 42%,#500038 100%);
+    box-shadow:0 0 0 5px #D4AF37,0 0 0 8px rgba(212,175,55,.28),0 8px 44px rgba(199,21,133,.38);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transition:transform .15s;
+  }
+  .seal:hover{transform:scale(1.04)}
+  .seal:active{transform:scale(.96)}
+  .seal-mono{font-family:'Great Vibes',cursive;font-size:2.9rem;color:rgba(255,255,255,.9);line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+  .seal-sub{font-family:'Lato',sans-serif;font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:3px}
+
+  /* shards */
+  .shards{position:absolute;inset:0;pointer-events:none}
+  .shard{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle,#c71585 0%,#7a0060 100%);
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    opacity:0;width:88px;height:88px;
+  }
+  .shard.fly{animation:shardfly .85s ease forwards}
+  .shard:nth-child(1){--tx:-145px;--ty:-115px;--r:-35deg}
+  .shard:nth-child(2){--tx:155px; --ty:-95px; --r:48deg}
+  .shard:nth-child(3){--tx:-75px; --ty:155px; --r:22deg}
+  .shard:nth-child(4){--tx:125px; --ty:145px; --r:-58deg}
+  .shard:nth-child(5){--tx:-175px;--ty:25px;  --r:14deg;width:60px;height:60px}
+  .shard:nth-child(6){--tx:165px; --ty:18px;  --r:-22deg;width:60px;height:60px}
+  @keyframes shardfly{
+    0%  {opacity:.88;transform:translate(-50%,-50%) scale(.65)}
+    30% {opacity:.75}
+    100%{opacity:0;transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) rotate(var(--r)) scale(.28)}
+  }
+  .seal.breaking{animation:sealcrack .55s ease forwards}
+  @keyframes sealcrack{
+    0%  {transform:scale(1)}
+    12% {transform:scale(1.07)}
+    28% {transform:scale(.94) rotate(4deg)}
+    55% {transform:scale(1.09) rotate(-2deg);opacity:1}
+    100%{transform:scale(0) rotate(12deg);opacity:0}
+  }
+
+  /* ==========================================================
+     CONCEPT 3 — LOTUS BLOOM
+     ========================================================== */
+  #op-lotus{
+    background:radial-gradient(ellipse at center,#1a2e00 0%,#0d1600 70%);
+    flex-direction:column;gap:26px;
+  }
+  .lotus{position:relative;width:240px;height:240px}
+
+  .petal{
+    position:absolute;width:50px;height:106px;
+    border-radius:50% 50% 38% 38% / 58% 58% 42% 42%;
+    left:calc(50% - 25px);bottom:50%;/* bottom edge at flower centre */
+    transform-origin:center bottom;
+    /* closed: all pointing up at angle 0 */
+    transform:rotate(0deg);
+    transition:transform 1.05s cubic-bezier(.34,1.56,.64,1);
+  }
+  /* 8 petal colours — warm marigold palette */
+  .petal:nth-child(1){background:linear-gradient(to top,#E65100,#FF8F00)}
+  .petal:nth-child(2){background:linear-gradient(to top,#BF360C,#FF6D00)}
+  .petal:nth-child(3){background:linear-gradient(to top,#E65100,#FFB300)}
+  .petal:nth-child(4){background:linear-gradient(to top,#BF360C,#FF8F00)}
+  .petal:nth-child(5){background:linear-gradient(to top,#E65100,#FF8F00)}
+  .petal:nth-child(6){background:linear-gradient(to top,#BF360C,#FF6D00)}
+  .petal:nth-child(7){background:linear-gradient(to top,#E65100,#FFB300)}
+  .petal:nth-child(8){background:linear-gradient(to top,#BF360C,#FF8F00)}
+
+  /* open: each petal rotates to its own angle */
+  .lotus.open .petal:nth-child(1){transform:rotate(0deg)  ;transition-delay:.00s}
+  .lotus.open .petal:nth-child(2){transform:rotate(45deg) ;transition-delay:.07s}
+  .lotus.open .petal:nth-child(3){transform:rotate(90deg) ;transition-delay:.14s}
+  .lotus.open .petal:nth-child(4){transform:rotate(135deg);transition-delay:.21s}
+  .lotus.open .petal:nth-child(5){transform:rotate(180deg);transition-delay:.28s}
+  .lotus.open .petal:nth-child(6){transform:rotate(225deg);transition-delay:.35s}
+  .lotus.open .petal:nth-child(7){transform:rotate(270deg);transition-delay:.42s}
+  .lotus.open .petal:nth-child(8){transform:rotate(315deg);transition-delay:.49s}
+
+  .lotus-disc{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:76px;height:76px;border-radius:50%;z-index:10;
+    background:radial-gradient(circle,#FFD54F 0%,#FF8F00 65%,#E65100 100%);
+    box-shadow:0 0 22px rgba(255,176,0,.5);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-style:italic;font-size:.62rem;color:rgba(60,20,0,.8);
+  }
+  .lotus-names{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    z-index:20;text-align:center;opacity:0;pointer-events:none;
+    transition:opacity .7s ease .85s;
+  }
+  .lotus.open .lotus-names{opacity:1}
+  .lotus-names em{
+    font-family:'Great Vibes',cursive;font-size:clamp(1.3rem,4vw,1.9rem);
+    color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);display:block;line-height:1.2;
+  }
+  #lotus-cta{transition:opacity .5s}
+  .lotus.open ~ #lotus-cta{opacity:0}
+
+  /* ==========================================================
+     CONCEPT 4 — SACRED SCROLL
+     ========================================================== */
+  #op-scroll{
+    background:linear-gradient(155deg,#001520 0%,#00352E 60%,#001810 100%);
+    flex-direction:column;gap:0;
+  }
+  .scroll-outer{
+    display:flex;flex-direction:column;align-items:center;
+    position:relative;width:min(330px,88vw);
+  }
+  .scroll-rod{
+    width:100%;height:30px;flex-shrink:0;position:relative;z-index:2;
+    background:linear-gradient(to bottom,#c8960a 0%,#D4AF37 40%,#9a720a 72%,#D4AF37 100%);
+    border-radius:7px;box-shadow:0 4px 14px rgba(0,0,0,.4),inset 0 1px 3px rgba(255,255,255,.25);
+    transition:transform 1.15s cubic-bezier(.4,0,.2,1);
+  }
+  .scroll-rod::before,.scroll-rod::after{
+    content:'';position:absolute;top:50%;transform:translateY(-50%);
+    width:17px;height:42px;border-radius:5px;
+    background:linear-gradient(to right,#9a720a,#D4AF37,#9a720a);
+    box-shadow:0 2px 6px rgba(0,0,0,.3);
+  }
+  .scroll-rod::before{left:-5px}
+  .scroll-rod::after {right:-5px}
+  .scroll-body{
+    width:100%;overflow:hidden;max-height:0;
+    background:linear-gradient(to bottom,#f5e6c8,#edd9a0,#f5e6c8);
+    transition:max-height 1s cubic-bezier(.4,0,.2,1) .15s;
+    position:relative;z-index:1;
+  }
+  .scroll-ink{
+    padding:26px 28px;text-align:center;
+    opacity:0;transform:scaleY(.85);
+    transition:opacity .55s ease .85s,transform .55s ease .85s;
+  }
+  .scroll-ink .si-eye{font-family:'Playfair Display',serif;font-style:italic;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:#6B4C0A;margin-bottom:8px}
+  .scroll-ink .si-rule{width:55px;height:1px;background:#9A7209;margin:8px auto}
+  .scroll-ink .si-names{font-family:'Great Vibes',cursive;font-size:clamp(2rem,7vw,2.8rem);color:#4a2800;line-height:1.15}
+  .scroll-ink .si-amp{font-family:'Great Vibes',cursive;font-size:clamp(1.3rem,4vw,1.9rem);color:#9A7209;display:block}
+  .scroll-ink .si-date{font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#7A5000;margin-top:8px}
+  /* opened */
+  .scroll-outer.open .scroll-rod-t{transform:translateY(-7px)}
+  .scroll-outer.open .scroll-rod-b{transform:translateY(7px)}
+  .scroll-outer.open .scroll-body{max-height:320px}
+  .scroll-outer.open .scroll-ink{opacity:1;transform:scaleY(1)}
+  #scroll-cta{margin-top:22px;transition:opacity .4s}
+  .scroll-outer.open ~ #scroll-cta{opacity:0}
+
+  /* ==========================================================
+     CONCEPT 5 — GOLD ENVELOPE
+     ========================================================== */
+  #op-env{
+    background:radial-gradient(ellipse at 42% 42%,#3D2B00 0%,#1a1200 70%);
+    flex-direction:column;gap:18px;
+  }
+  .env{position:relative;width:min(320px,87vw);height:min(220px,62vw)}
+
+  .env-body{
+    position:absolute;inset:32% 0 0 0;
+    background:linear-gradient(to bottom,#f5e5c5,#edd9a0);
+    border-radius:0 0 10px 10px;
+    border:1px solid rgba(212,175,55,.38);
+    box-shadow:0 14px 50px rgba(0,0,0,.5);
+  }
+  /* inner V fold lines */
+  .env-body::before,.env-body::after{content:'';position:absolute;bottom:0;width:0;height:0}
+  .env-body::before{
+    left:0;
+    border-left:calc(min(320px,87vw)/2) solid rgba(212,175,55,.13);
+    border-top:calc(min(220px,62vw)*.42) solid transparent;
+  }
+  .env-body::after{
+    right:0;
+    border-right:calc(min(320px,87vw)/2) solid rgba(212,175,55,.13);
+    border-top:calc(min(220px,62vw)*.42) solid transparent;
+  }
+  .env-flap{
+    position:absolute;top:0;left:0;right:0;height:44%;
+    transform-origin:top center;
+    transition:transform .85s cubic-bezier(.4,0,.2,1);z-index:5;
+  }
+  .env-flap-shape{
+    width:100%;height:100%;
+    background:linear-gradient(to bottom,#EDD9A0,#D4AF37);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+  }
+  .env-wax{
+    position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);
+    width:34px;height:34px;border-radius:50%;z-index:6;
+    background:radial-gradient(circle,#C5A028 0%,#8B6914 100%);
+    box-shadow:0 0 0 2px #D4AF37,0 3px 10px rgba(0,0,0,.4);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-size:.62rem;color:rgba(255,255,255,.9);
+    transition:transform .35s ease,opacity .35s ease;
+  }
+  .env-card{
+    position:absolute;left:9%;width:82%;bottom:12%;
+    background:linear-gradient(135deg,#FFF8E7,#FFF0CC);
+    border:1px solid rgba(212,175,55,.5);border-radius:5px;padding:12px;
+    text-align:center;z-index:3;opacity:0;
+    transition:transform .95s cubic-bezier(.34,1.2,.64,1) .55s,opacity .4s ease .55s;
+  }
+  .env-card .ec-eye{font-family:'Playfair Display',serif;font-style:italic;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:#8B6914;margin-bottom:3px}
+  .env-card .ec-names{font-family:'Great Vibes',cursive;font-size:clamp(1.1rem,4vw,1.55rem);color:#3D2B00;line-height:1.2}
+  .env-card .ec-amp{font-family:'Great Vibes',cursive;font-size:clamp(.85rem,3vw,1.1rem);color:#8B6914}
+  .env-card .ec-date{font-family:'Playfair Display',serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#8B6914;margin-top:5px}
+  /* opened */
+  .env.open .env-flap{transform:perspective(550px) rotateX(-182deg)}
+  .env.open .env-wax{transform:translateX(-50%) scale(0);opacity:0}
+  .env.open .env-card{transform:translateY(calc(-100% - 18px));opacity:1}
+  #env-cta{transition:opacity .4s}
+  .env.open ~ #env-cta{opacity:0}
+
+  /* ==========================================================
+     INVITATION — HERO
+     ========================================================== */
+  #invitation{opacity:0;transition:opacity .8s ease;pointer-events:none}
+  #invitation.revealed{opacity:1;pointer-events:auto}
+
+  .hero{
+    min-height:100vh;padding:88px 24px 76px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    background:linear-gradient(150deg,var(--h1) 0%,var(--h2) 55%,var(--h3) 100%);
+    transition:background .6s;
+  }
+  .hring{
+    position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;
+    border:1px solid rgba(212,175,55,.18);
+    transform:translate(-50%,-50%);
+  }
+  .hring:nth-child(1){width:660px;height:660px;animation:hrspin 30s linear infinite}
+  .hring:nth-child(2){width:490px;height:490px;animation:hrspin 22s linear infinite reverse;border-color:rgba(212,175,55,.1)}
+  @keyframes hrspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .hcorner{position:absolute;color:rgba(212,175,55,.34);font-size:clamp(1.9rem,5vw,3rem);pointer-events:none}
+  .hc-tl{top:58px;left:16px}
+  .hc-tr{top:58px;right:16px;transform:scaleX(-1)}
+  .hc-bl{bottom:68px;left:16px;transform:scaleY(-1)}
+  .hc-br{bottom:68px;right:16px;transform:scale(-1,-1)}
+
+  .hi{position:relative;z-index:2;text-align:center;max-width:620px}
+  .hey{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.7rem,2vw,.86rem);letter-spacing:.34em;text-transform:uppercase;color:var(--a);opacity:0;animation:ri 1s ease .2s forwards;margin-bottom:15px}
+  .hrule{display:flex;align-items:center;justify-content:center;gap:14px;margin:13px 0;opacity:0}
+  .hrule::before,.hrule::after{content:'';display:block;height:1px;width:clamp(45px,9vw,85px);background:var(--a)}
+  .hrule.a1{animation:ri 1s ease .4s forwards}
+  .hrule.a2{animation:ri 1s ease 1.4s forwards}
+  .hrule::before,.hrule::after{background:var(--a)}
+  .hgem{color:var(--a);font-size:.95rem}
+  .hbride{font-family:'Great Vibes',cursive;font-size:clamp(3rem,11vw,5.5rem);color:#fff;line-height:1.05;text-shadow:0 4px 20px rgba(0,0,0,.25);opacity:0;animation:ri 1s ease .7s forwards}
+  .hamp  {font-family:'Great Vibes',cursive;font-size:clamp(1.7rem,6vw,3rem);color:var(--a);display:block;opacity:0;animation:ri 1s ease 1s forwards;margin:2px 0}
+  .hgroom{font-family:'Great Vibes',cursive;font-size:clamp(3rem,11vw,5.5rem);color:#fff;line-height:1.05;text-shadow:0 4px 20px rgba(0,0,0,.25);opacity:0;animation:ri 1s ease 1.2s forwards}
+  .hdate{font-family:'Playfair Display',serif;font-size:clamp(.7rem,1.9vw,.86rem);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:20px;opacity:0;animation:ri 1s ease 1.6s forwards}
+  .hdate strong{color:var(--a)}
+  @keyframes ri{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+  .scue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:3px;opacity:0;animation:ri 1s ease 2s forwards}
+  .scue span{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:3px}
+  .chev{width:14px;height:14px;border-right:2px solid var(--a);border-bottom:2px solid var(--a);transform:rotate(45deg);margin-top:-7px;animation:bv 1.6s ease infinite}
+  .chev:nth-child(3){animation-delay:.15s;opacity:.55}
+  .chev:nth-child(4){animation-delay:.3s;opacity:.28}
+  @keyframes bv{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+
+  /* ==========================================================
+     INVITATION — SECTIONS
+     ========================================================== */
+  .sec{padding:68px 24px;max-width:760px;margin:0 auto}
+  .sh{text-align:center;margin-bottom:46px}
+  .seye{font-family:'Playfair Display',serif;font-style:italic;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--p);opacity:.7;margin-bottom:9px}
+  .stit{font-family:'Playfair Display',serif;font-size:clamp(1.75rem,5.5vw,2.75rem);color:var(--p);line-height:1.2}
+  .srule{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:18px}
+  .srule::before,.srule::after{content:'';display:block;height:1px;width:48px;background:var(--bdr);opacity:.4}
+  .srule-icon{color:var(--a);font-size:1rem}
+
+  .sbg{background:var(--card);border-top:1px solid rgba(212,175,55,.17);border-bottom:1px solid rgba(212,175,55,.17)}
+
+  /* scratch card */
+  .swrap{display:flex;flex-direction:column;align-items:center;gap:24px}
+  .cbox{position:relative;width:min(305px,90vw);height:160px;border-radius:15px;overflow:hidden;box-shadow:0 8px 42px rgba(0,0,0,.2),0 0 0 3px var(--bdr);cursor:crosshair;user-select:none;-webkit-user-select:none}
+  .crev{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;background:linear-gradient(135deg,#fffdf5,#fff);text-align:center;gap:4px}
+  .crev-lbl{font-family:'Playfair Display',serif;font-style:italic;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--p);opacity:.68}
+  .crev-date{font-family:'Great Vibes',cursive;font-size:clamp(2rem,8vw,2.8rem);color:var(--p);line-height:1.1}
+  .crev-sub{font-family:'Playfair Display',serif;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--td);opacity:.52}
+  #sc{position:absolute;inset:0;z-index:2;border-radius:15px;transition:opacity .9s;touch-action:none}
+  .shint{font-family:'Playfair Display',serif;font-style:italic;font-size:.84rem;color:var(--td);opacity:.6;text-align:center}
+  .pt{width:165px;height:4px;background:rgba(0,0,0,.1);border-radius:2px;overflow:hidden}
+  .pf{height:100%;width:0%;background:linear-gradient(to right,var(--p),var(--a));border-radius:2px;transition:width .12s}
+
+  /* detail cards */
+  .dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:460px){.dgrid{grid-template-columns:1fr}}
+  .dc{background:var(--card);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 16px;text-align:center;transition:transform .3s,box-shadow .3s}
+  .dc:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
+  .di{font-size:1.7rem;margin-bottom:9px}
+  .dl{font-family:'Playfair Display',serif;font-size:.67rem;letter-spacing:.25em;text-transform:uppercase;color:var(--p);margin-bottom:6px}
+  .dv{font-family:'Playfair Display',serif;font-size:1rem;color:var(--td);line-height:1.4}
+  .dv small{display:block;font-family:'Lato',sans-serif;font-size:.73rem;opacity:.56;margin-top:3px}
+
+  /* rsvp */
+  .rsec{background:linear-gradient(150deg,var(--h1) 0%,var(--h2) 60%,var(--h3) 100%);padding:78px 24px;text-align:center;transition:background .6s}
+  .rsec .stit{color:#fff}
+  .rsec .seye{color:var(--a);opacity:1}
+  .rsec .srule::before,.rsec .srule::after{background:rgba(255,255,255,.28);opacity:1}
+  .rbody{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.9rem,2.5vw,1.05rem);color:rgba(255,255,255,.78);max-width:400px;margin:22px auto 30px;line-height:1.75}
+  .rbtn{display:inline-block;padding:13px 46px;background:var(--a);color:#2a1800;font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;cursor:pointer;box-shadow:0 5px 22px rgba(0,0,0,.22);transition:transform .3s,box-shadow .3s}
+  .rbtn:hover{transform:translateY(-3px);box-shadow:0 9px 30px rgba(0,0,0,.3)}
+
+  footer{background:#0a0a0a;padding:30px 24px;text-align:center}
+  .fn{font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--a);margin-bottom:6px}
+  .fs{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+
+  /* scroll reveal */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+  .rv.in{opacity:1;transform:none}
+  .stg>*{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+  .stg.in>*:nth-child(1){opacity:1;transform:none;transition-delay:.07s}
+  .stg.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.17s}
+  .stg.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.27s}
+  .stg.in>*:nth-child(4){opacity:1;transform:none;transition-delay:.37s}
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONCEPT TAB BAR
+     ============================================================ -->
+<nav class="cbar" role="tablist" aria-label="Opening interaction preview">
+  <button class="ctab on" data-c="doors"  data-theme=""        role="tab" aria-selected="true" >Double<br>Doors</button>
+  <button class="ctab"    data-c="seal"   data-theme="kanchi"  role="tab" aria-selected="false">Wax<br>Seal</button>
+  <button class="ctab"    data-c="lotus"  data-theme="marigold" role="tab" aria-selected="false">Lotus<br>Bloom</button>
+  <button class="ctab"    data-c="scroll" data-theme="peacock" role="tab" aria-selected="false">Sacred<br>Scroll</button>
+  <button class="ctab"    data-c="env"    data-theme="ivory"   role="tab" aria-selected="false">Gold<br>Envelope</button>
+</nav>
+
+<button id="replay" aria-label="Replay opening">↺ Replay</button>
+
+
+<!-- ============================================================
+     OPENER 1 — DOUBLE DOORS
+     ============================================================ -->
+<div class="opener on" id="op-doors">
+  <div class="door-topbar" aria-hidden="true">— పెళ్ళి పత్రిక —</div>
+  <div class="dw" id="dw">
+    <div class="door door-l" aria-hidden="true">
+      <div class="door-panel t"></div>
+      <div class="door-panel b"></div>
+      <div class="door-knob"></div>
+    </div>
+    <div class="door door-r" aria-hidden="true">
+      <div class="door-panel t"></div>
+      <div class="door-panel b"></div>
+      <div class="door-knob"></div>
+    </div>
+  </div>
+  <div class="doors-gem" aria-hidden="true">✦</div>
+  <div class="doors-cta" id="doors-cta">
+    <span class="label">— Pelli Patrika —</span>
+    <span class="tap">Tap to Open</span>
+  </div>
+  <button class="enter-btn" id="doors-enter">Enter Invitation →</button>
+</div>
+
+
+<!-- ============================================================
+     OPENER 2 — WAX SEAL
+     ============================================================ -->
+<div class="opener" id="op-seal">
+  <div class="seal-rings">
+    <div class="sring sring1" aria-hidden="true"></div>
+    <div class="sring sring2" aria-hidden="true"></div>
+    <div class="seal" id="seal" role="button" tabindex="0" aria-label="Break the wax seal">
+      <span class="seal-mono">P &amp; A</span>
+      <span class="seal-sub">August 2026</span>
+    </div>
+    <div class="shards" aria-hidden="true">
+      <div class="shard"></div><div class="shard"></div><div class="shard"></div>
+      <div class="shard"></div><div class="shard"></div><div class="shard"></div>
+    </div>
+  </div>
+  <p class="cta-text">Press the seal to reveal your invitation</p>
+  <button class="enter-btn" id="seal-enter">Enter Invitation →</button>
+</div>
+
+
+<!-- ============================================================
+     OPENER 3 — LOTUS BLOOM
+     ============================================================ -->
+<div class="opener" id="op-lotus">
+  <div class="lotus" id="lotus" role="button" tabindex="0" aria-label="Bloom the lotus">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div>
+    <div class="lotus-disc" aria-hidden="true">✦</div>
+    <div class="lotus-names" aria-live="polite">
+      <em>Priya</em>
+      <em style="font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.65)">&amp;</em>
+      <em>Arjun</em>
+    </div>
+  </div>
+  <p class="cta-text" id="lotus-cta">Tap the lotus to bloom</p>
+  <button class="enter-btn" id="lotus-enter">Enter Invitation →</button>
+</div>
+
+
+<!-- ============================================================
+     OPENER 4 — SACRED SCROLL
+     ============================================================ -->
+<div class="opener" id="op-scroll">
+  <div class="scroll-outer" id="scroll-outer" role="button" tabindex="0" aria-label="Unroll the scroll">
+    <div class="scroll-rod scroll-rod-t" aria-hidden="true"></div>
+    <div class="scroll-body">
+      <div class="scroll-ink">
+        <p class="si-eye">— Pelli Patrika —</p>
+        <div class="si-rule"></div>
+        <p class="si-names">Priya<span class="si-amp">&amp;</span>Arjun</p>
+        <div class="si-rule"></div>
+        <p class="si-date">August 24, 2026 &nbsp;·&nbsp; Hyderabad</p>
+      </div>
+    </div>
+    <div class="scroll-rod scroll-rod-b" aria-hidden="true"></div>
+  </div>
+  <p class="cta-text" id="scroll-cta">Tap the scroll to unroll</p>
+  <button class="enter-btn" id="scroll-enter">Enter Invitation →</button>
+</div>
+
+
+<!-- ============================================================
+     OPENER 5 — GOLD ENVELOPE
+     ============================================================ -->
+<div class="opener" id="op-env">
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Open the envelope">
+    <div class="env-flap" aria-hidden="true">
+      <div class="env-flap-shape"></div>
+      <div class="env-wax">✦</div>
+    </div>
+    <div class="env-body" aria-hidden="true"></div>
+    <div class="env-card" aria-hidden="true">
+      <p class="ec-eye">Pelli Patrika</p>
+      <p class="ec-names">Priya <span class="ec-amp">&amp;</span> Arjun</p>
+      <p class="ec-date">August 24, 2026</p>
+    </div>
+  </div>
+  <p class="cta-text" id="env-cta">Tap to open your invitation</p>
+  <button class="enter-btn" id="env-enter">Enter Invitation →</button>
+</div>
+
+
+<!-- ============================================================
+     INVITATION CONTENT
+     ============================================================ -->
+<div id="invitation">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hring"></div><div class="hring"></div>
+    <span class="hcorner hc-tl" aria-hidden="true">❧</span>
+    <span class="hcorner hc-tr" aria-hidden="true">❧</span>
+    <span class="hcorner hc-bl" aria-hidden="true">❧</span>
+    <span class="hcorner hc-br" aria-hidden="true">❧</span>
+    <div class="hi">
+      <p class="hey">— శ్రీమతే · Pelli Patrika —</p>
+      <div class="hrule a1"><span class="hgem">✦</span></div>
+      <h1 class="hbride">Priya</h1>
+      <span class="hamp">&amp;</span>
+      <h1 class="hgroom">Arjun</h1>
+      <div class="hrule a2"><span class="hgem" style="color:rgba(255,255,255,.28)">✦</span></div>
+      <p class="hdate"><strong>August 24, 2026</strong> &nbsp;·&nbsp; Hyderabad, Telangana</p>
+    </div>
+    <div class="scue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="chev"></div><div class="chev"></div><div class="chev"></div>
+    </div>
+  </section>
+
+  <!-- SCRATCH CARD -->
+  <section class="sbg" id="scratch">
+    <div class="sec">
+      <div class="sh rv">
+        <p class="seye">An Invitation to Discover</p>
+        <h2 class="stit">Scratch to Reveal<br>the Muhurtham</h2>
+        <div class="srule"><span class="srule-icon">🪔</span></div>
+      </div>
+      <div class="swrap rv">
+        <div class="cbox" id="cbox">
+          <div class="crev">
+            <p class="crev-lbl">Muhurtham</p>
+            <p class="crev-date">August 24, 2026</p>
+            <p class="crev-sub">7 : 15 AM &nbsp;·&nbsp; Hyderabad</p>
+          </div>
+          <canvas id="sc" aria-hidden="true"></canvas>
+        </div>
+        <p class="shint" id="shint">✦ Use your finger or mouse to scratch ✦</p>
+        <div class="pt" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="pf" id="pf"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <div class="sec">
+      <div class="sh rv">
+        <p class="seye">You Are Cordially Invited</p>
+        <h2 class="stit">Vivaha Vivekaalu</h2>
+        <div class="srule"><span class="srule-icon">✦</span></div>
+      </div>
+      <div class="dgrid stg">
+        <div class="dc"><div class="di">📅</div><p class="dl">Date</p><p class="dv">August 24, 2026<small>Monday</small></p></div>
+        <div class="dc"><div class="di">⏰</div><p class="dl">Muhurtham</p><p class="dv">7:15 AM<small>Indian Standard Time</small></p></div>
+        <div class="dc"><div class="di">📍</div><p class="dl">Venue</p><p class="dv">Sri Venkateswara<br>Function Hall<small>Hyderabad, Telangana</small></p></div>
+        <div class="dc"><div class="di">🪔</div><p class="dl">Ceremony</p><p class="dv">Telugu Vedic<small>Brahmin Tradition</small></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsec">
+    <div class="sh rv" style="max-width:760px;margin:0 auto">
+      <p class="seye">Bless Our New Beginning</p>
+      <h2 class="stit">RSVP</h2>
+      <div class="srule"><span class="srule-icon">✦</span></div>
+    </div>
+    <p class="rbody rv">We joyfully request the presence of you and your family<br>to bless us on this auspicious occasion.</p>
+    <a class="rbtn rv" href="#">Confirm Attendance</a>
+  </section>
+
+  <footer>
+    <p class="fn">Priya &amp; Arjun</p>
+    <p class="fs">With love &amp; blessings &nbsp;·&nbsp; August 2026 &nbsp;·&nbsp; Hyderabad</p>
+  </footer>
+</div>
+
+
+<script>
+/* ==============================================================
+   THEME MAP — each concept tab also switches the invitation theme
+   ============================================================== */
+const THEMES = { doors:'', seal:'kanchi', lotus:'marigold', scroll:'peacock', env:'ivory' };
+
+/* ==============================================================
+   CONCEPT STATE
+   ============================================================== */
+let active = 'doors';
+const state = { doors:false, seal:false, lotus:false, scroll:false, env:false };
+
+/* ==============================================================
+   TAB SWITCHER
+   ============================================================== */
+document.querySelectorAll('.ctab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const c = tab.dataset.c;
+    if (c === active) return;
+
+    document.querySelectorAll('.ctab').forEach(t => { t.classList.remove('on'); t.setAttribute('aria-selected','false'); });
+    tab.classList.add('on'); tab.setAttribute('aria-selected','true');
+
+    // hide current opener
+    const prev = document.getElementById('op-' + active);
+    prev.classList.remove('on','out');
+
+    // show new opener
+    document.getElementById('op-' + c).classList.add('on');
+    active = c;
+
+    // theme
+    document.body.setAttribute('data-theme', THEMES[c]);
+
+    // re-hide invitation, replay btn
+    document.getElementById('invitation').classList.remove('revealed');
+    document.getElementById('replay').classList.remove('on');
+
+    // redraw scratch cover
+    drawCover();
+
+    // reset new concept if it was already used
+    resetConcept(c);
+  });
+});
+
+/* ==============================================================
+   ENTER INVITATION (shared)
+   ============================================================== */
+function showEnter(btnId, delay) {
+  setTimeout(() => {
+    const btn = document.getElementById(btnId);
+    btn.classList.add('on');
+    btn.addEventListener('click', () => {
+      const op = document.getElementById('op-' + active);
+      op.classList.add('out');
+      setTimeout(() => op.classList.remove('on','out'), 820);
+      document.getElementById('invitation').classList.add('revealed');
+      document.getElementById('replay').classList.add('on');
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }, { once:true });
+  }, delay);
+}
+
+/* ==============================================================
+   CONCEPT 1 — DOUBLE DOORS
+   ============================================================== */
+const dw = document.getElementById('dw');
+const doorsCta = document.getElementById('doors-cta');
+
+document.getElementById('op-doors').addEventListener('click', function() {
+  if (state.doors) return;
+  state.doors = true;
+  dw.classList.add('opened');
+  doorsCta.style.opacity = '0';
+  showEnter('doors-enter', 1100);
+});
+
+/* ==============================================================
+   CONCEPT 2 — WAX SEAL
+   ============================================================== */
+const sealEl = document.getElementById('seal');
+
+function breakSeal() {
+  if (state.seal) return;
+  state.seal = true;
+  sealEl.classList.add('breaking');
+  document.querySelectorAll('#op-seal .shard').forEach((s, i) =>
+    setTimeout(() => s.classList.add('fly'), i * 38)
+  );
+  showEnter('seal-enter', 920);
+}
+sealEl.addEventListener('click', breakSeal);
+sealEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') breakSeal(); });
+
+/* ==============================================================
+   CONCEPT 3 — LOTUS BLOOM
+   ============================================================== */
+const lotusEl  = document.getElementById('lotus');
+const lotusCta = document.getElementById('lotus-cta');
+
+function bloomLotus() {
+  if (state.lotus) return;
+  state.lotus = true;
+  lotusEl.classList.add('open');
+  lotusCta.style.opacity = '0';
+  showEnter('lotus-enter', 1450);
+}
+lotusEl.addEventListener('click', bloomLotus);
+lotusEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') bloomLotus(); });
+
+/* ==============================================================
+   CONCEPT 4 — SACRED SCROLL
+   ============================================================== */
+const scrollOuter = document.getElementById('scroll-outer');
+const scrollCta   = document.getElementById('scroll-cta');
+
+function openScroll() {
+  if (state.scroll) return;
+  state.scroll = true;
+  scrollOuter.classList.add('open');
+  scrollCta.style.opacity = '0';
+  showEnter('scroll-enter', 1650);
+}
+scrollOuter.addEventListener('click', openScroll);
+scrollOuter.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openScroll(); });
+
+/* ==============================================================
+   CONCEPT 5 — ENVELOPE
+   ============================================================== */
+const envEl  = document.getElementById('env');
+const envCta = document.getElementById('env-cta');
+
+function openEnv() {
+  if (state.env) return;
+  state.env = true;
+  envEl.classList.add('open');
+  envCta.style.opacity = '0';
+  showEnter('env-enter', 1850);
+}
+envEl.addEventListener('click', openEnv);
+envEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openEnv(); });
+
+/* ==============================================================
+   RESET CONCEPT (when tab switches or replay)
+   ============================================================== */
+function resetConcept(c) {
+  state[c] = false;
+  if (c === 'doors') {
+    dw.classList.remove('opened');
+    doorsCta.style.opacity = '';
+    document.getElementById('doors-enter').classList.remove('on');
+  }
+  if (c === 'seal') {
+    sealEl.classList.remove('breaking');
+    document.querySelectorAll('#op-seal .shard').forEach(s => s.classList.remove('fly'));
+    document.getElementById('seal-enter').classList.remove('on');
+  }
+  if (c === 'lotus') {
+    lotusEl.classList.remove('open');
+    lotusCta.style.opacity = '';
+    document.getElementById('lotus-enter').classList.remove('on');
+  }
+  if (c === 'scroll') {
+    scrollOuter.classList.remove('open');
+    scrollCta.style.opacity = '';
+    document.getElementById('scroll-enter').classList.remove('on');
+  }
+  if (c === 'env') {
+    envEl.classList.remove('open');
+    envCta.style.opacity = '';
+    document.getElementById('env-enter').classList.remove('on');
+  }
+}
+
+/* ==============================================================
+   REPLAY
+   ============================================================== */
+document.getElementById('replay').addEventListener('click', () => {
+  const op = document.getElementById('op-' + active);
+  op.classList.add('on');
+  document.getElementById('invitation').classList.remove('revealed');
+  document.getElementById('replay').classList.remove('on');
+  resetConcept(active);
+  window.scrollTo({ top:0, behavior:'smooth' });
+});
+
+/* ==============================================================
+   SCRATCH CARD
+   ============================================================== */
+const canvas = document.getElementById('sc');
+const ctx    = canvas.getContext('2d');
+const cbox   = document.getElementById('cbox');
+const pf     = document.getElementById('pf');
+const shint  = document.getElementById('shint');
+let scratching=false, scratchDone=false;
+
+function sizeCanvas() {
+  const r = cbox.getBoundingClientRect();
+  canvas.width = Math.round(r.width); canvas.height = Math.round(r.height);
+  if (!scratchDone) drawCover();
+}
+
+function drawCover() {
+  if (scratchDone) return;
+  const st = getComputedStyle(document.body);
+  const c1 = st.getPropertyValue('--sc1').trim()||'#FFC72C';
+  const c2 = st.getPropertyValue('--sc2').trim()||'#9E1B32';
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const g = ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+  g.addColorStop(0,c1); g.addColorStop(1,c2);
+  ctx.fillStyle=g; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.globalAlpha=.1; ctx.fillStyle='#fff';
+  for(let x=12;x<canvas.width;x+=22) for(let y=12;y<canvas.height;y+=22){ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();}
+  ctx.globalAlpha=1;
+  ctx.fillStyle='rgba(255,255,255,.88)';
+  ctx.font=`bold ${Math.floor(canvas.width*.063)}px 'Playfair Display',Georgia,serif`;
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText('✦  Scratch Here  ✦',canvas.width/2,canvas.height/2-12);
+  ctx.fillStyle='rgba(255,255,255,.55)';
+  ctx.font=`${Math.floor(canvas.width*.037)}px Lato,sans-serif`;
+  ctx.fillText('to reveal the Muhurtham',canvas.width/2,canvas.height/2+16);
+}
+
+function xy(e){ const r=canvas.getBoundingClientRect(),s=e.touches?e.touches[0]:e; return{x:s.clientX-r.left,y:s.clientY-r.top}; }
+function scratch(x,y){ ctx.globalCompositeOperation='destination-out'; ctx.beginPath(); ctx.arc(x,y,30,0,Math.PI*2); ctx.fill(); }
+function pct(){ const d=ctx.getImageData(0,0,canvas.width,canvas.height).data; let c=0,s=16,t=d.length/(4*s); for(let i=3;i<d.length;i+=4*s)if(d[i]<128)c++; return(c/t)*100; }
+function check(){ const p=Math.min(pct(),100); pf.style.width=p+'%'; pf.parentElement.setAttribute('aria-valuenow',Math.round(p)); if(p>=50&&!scratchDone){scratchDone=true;canvas.style.opacity='0';shint.textContent='✦  Muhurtham Revealed  ✦';pf.style.width='100%';} }
+
+canvas.addEventListener('mousedown', e=>{scratching=true;const p=xy(e);scratch(p.x,p.y);check();});
+canvas.addEventListener('mousemove', e=>{if(!scratching)return;const p=xy(e);scratch(p.x,p.y);check();});
+canvas.addEventListener('mouseup',   ()=>{scratching=false;});
+canvas.addEventListener('mouseleave',()=>{scratching=false;});
+canvas.addEventListener('touchstart',e=>{e.preventDefault();scratching=true;const p=xy(e);scratch(p.x,p.y);check();},{passive:false});
+canvas.addEventListener('touchmove', e=>{if(!scratching)return;e.preventDefault();const p=xy(e);scratch(p.x,p.y);check();},{passive:false});
+canvas.addEventListener('touchend',  ()=>{scratching=false;});
+
+/* ==============================================================
+   SCROLL REVEAL
+   ============================================================== */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.rv,.stg').forEach(el=>io.observe(el));
+
+/* ==============================================================
+   INIT
+   ============================================================== */
+window.addEventListener('load',  sizeCanvas);
+window.addEventListener('resize',sizeCanvas);
+</script>
+</body>
+</html>
