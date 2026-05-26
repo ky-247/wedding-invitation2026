@@ -4,20 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta property="og:title" content="You're Invited — Priya & Arjun's Wedding" />
-  <meta property="og:description" content="Join us as we celebrate the sacred union of Priya & Arjun on August 24, 2026." />
+  <meta property="og:title" content="You're Invited — Kaushik & Pooja's Wedding" />
+  <meta property="og:description" content="Join us as we celebrate the sacred union of Kaushik & Pooja on June 24, 2026." />
   <meta property="og:image" content="https://YOUR-HOSTED-IMAGE-URL-HERE.jpg" />
   <meta property="og:url" content="https://YOUR-WEDDING-PAGE-URL-HERE.com" />
   <meta property="og:type" content="website" />
-  <title>Pelli Patrika — Priya &amp; Arjun</title>
+  <title>Pelli Patrika — Kaushik &amp; Pooja</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
   <style>
-  /* ==========================================================
-     THEME VARIABLES  (concept 1–5 each gets one palette)
-     ========================================================== */
   :root {
     --p:#9E1B32; --s:#FFC72C; --a:#D4AF37;
     --bg:#FFF8E7; --h1:#7B0D20; --h2:#9E1B32; --h3:#C4861A;
@@ -49,16 +46,11 @@
     --sc1:#C5A028; --sc2:#8B6914; --tul:#E6C280;
   }
 
-  /* ==========================================================
-     RESET
-     ========================================================== */
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--td);overflow-x:hidden;transition:background .5s,color .5s}
 
-  /* ==========================================================
-     CONCEPT TAB BAR
-     ========================================================== */
+  /* ── CONCEPT TAB BAR ── */
   .cbar{
     position:fixed;top:0;left:0;right:0;z-index:9000;
     display:flex;background:rgba(8,8,8,.93);
@@ -77,15 +69,13 @@
   .ctab.on{color:#fff;font-weight:700;border-bottom-color:var(--tul)}
   .ctab::before{content:'';display:block;width:7px;height:7px;border-radius:50%;margin:0 auto 4px;opacity:.55;transition:opacity .25s}
   .ctab.on::before{opacity:1}
-  .ctab[data-c="doors"]::before   {background:#FFC72C}
-  .ctab[data-c="seal"]::before    {background:#C71585}
-  .ctab[data-c="lotus"]::before   {background:#F9A825}
-  .ctab[data-c="scroll"]::before  {background:#00BCD4}
-  .ctab[data-c="env"]::before     {background:#E6C280}
+  .ctab[data-c="doors"]::before{background:#FFC72C}
+  .ctab[data-c="seal"]::before{background:#C71585}
+  .ctab[data-c="lotus"]::before{background:#F9A825}
+  .ctab[data-c="scroll"]::before{background:#00BCD4}
+  .ctab[data-c="env"]::before{background:#E6C280}
 
-  /* ==========================================================
-     REPLAY BUTTON
-     ========================================================== */
+  /* ── REPLAY BUTTON ── */
   #replay{
     position:fixed;bottom:22px;right:18px;z-index:8999;
     padding:10px 22px;background:var(--a);color:#2a1800;
@@ -97,9 +87,7 @@
   #replay.on{opacity:1;pointer-events:auto}
   #replay:hover{transform:scale(1.06)}
 
-  /* ==========================================================
-     SHARED OPENER WRAPPER
-     ========================================================== */
+  /* ── SHARED OPENER WRAPPER ── */
   .opener{
     position:fixed;inset:0;z-index:1000;
     display:none;align-items:center;justify-content:center;
@@ -109,7 +97,6 @@
   .opener.out{pointer-events:none;animation:fadeOut .8s ease forwards}
   @keyframes fadeOut{to{opacity:0}}
 
-  /* shared pulse for all CTAs */
   @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
   .cta-text{
     font-family:'Playfair Display',serif;font-style:italic;
@@ -117,8 +104,6 @@
     color:rgba(255,255,255,.6);text-align:center;
     animation:pulse 2s ease infinite;transition:opacity .4s;
   }
-
-  /* "Enter" button on each opener */
   .enter-btn{
     position:absolute;bottom:7%;left:50%;
     transform:translateX(-50%) translateY(12px);
@@ -133,13 +118,13 @@
   .enter-btn.on{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
   .enter-btn:hover{box-shadow:0 10px 34px rgba(0,0,0,.35)}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      CONCEPT 1 — DOUBLE DOORS
-     ========================================================== */
-  #op-doors{background:linear-gradient(140deg,#180004 0%,#2d000a 100%)}
+     ════════════════════════════════ */
+  #op-doors{background:#0f0002}
 
-  .dw{position:absolute;inset:40px 0 0;display:flex;perspective:1400px}
-
+  /* Doors */
+  .dw{position:absolute;inset:40px 0 0;display:flex;perspective:1400px;z-index:1}
   .door{
     flex:1;height:100%;position:relative;overflow:hidden;
     transition:transform 1.4s cubic-bezier(.25,.1,.1,1);will-change:transform;
@@ -152,12 +137,11 @@
     background:linear-gradient(to left,#3a0008 0%,#700010 55%,#8c0014 100%);
     transform-origin:right center;border-left:2px solid #D4AF37;
   }
-  /* carved-panel borders via pseudo */
   .door::before,.door::after{
     content:'';position:absolute;border:1px solid rgba(212,175,55,.32);border-radius:4px;
   }
   .door::before{inset:8% 10% 54% 10%}
-  .door::after {inset:52% 10% 8% 10%}
+  .door::after{inset:52% 10% 8% 10%}
   .door-panel{position:absolute;border:1px solid rgba(212,175,55,.18);border-radius:2px}
   .door-panel.t{inset:11% 14% 57% 14%}
   .door-panel.b{inset:55% 14% 11% 14%}
@@ -168,8 +152,6 @@
   }
   .door-l .door-knob{right:13px}
   .door-r .door-knob{left:13px}
-
-  /* top ornamental strip */
   .door-topbar{
     position:absolute;top:0;left:0;right:0;height:40px;z-index:3;
     background:linear-gradient(to right,#2d0008,#6e1200,#D4AF37,#6e1200,#2d0008);
@@ -181,6 +163,7 @@
   .doors-gem{
     position:absolute;top:50px;left:50%;transform:translateX(-50%);
     font-size:2.2rem;color:rgba(212,175,55,.55);z-index:4;pointer-events:none;
+    transition:opacity .4s;
   }
   .doors-cta{
     position:absolute;bottom:9%;left:50%;transform:translateX(-50%);
@@ -195,25 +178,22 @@
     font-family:'Playfair Display',serif;font-size:clamp(1rem,3.5vw,1.5rem);
     color:rgba(255,255,255,.85);
   }
-  /* opened */
   .dw.opened .door-l{transform:rotateY(-108deg)}
   .dw.opened .door-r{transform:rotateY(108deg)}
+  .dw.opened{pointer-events:none}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      CONCEPT 2 — WAX SEAL
-     ========================================================== */
+     ════════════════════════════════ */
   #op-seal{
     background:radial-gradient(ellipse at center,#18002a 0%,#0a0015 70%);
     flex-direction:column;gap:22px;
   }
   .seal-rings{position:relative;display:flex;align-items:center;justify-content:center}
-  .sring{
-    position:absolute;border-radius:50%;border:1px solid rgba(212,175,55,.28);
-  }
+  .sring{position:absolute;border-radius:50%;border:1px solid rgba(212,175,55,.28)}
   .sring1{width:270px;height:270px;animation:spin 20s linear infinite}
   .sring2{width:220px;height:220px;animation:spin 14s linear infinite reverse;border-color:rgba(212,175,55,.16)}
   @keyframes spin{to{transform:rotate(360deg)}}
-
   .seal{
     width:172px;height:172px;border-radius:50%;position:relative;
     background:radial-gradient(circle at 35% 32%,#c71585 0%,#80005a 42%,#500038 100%);
@@ -225,8 +205,6 @@
   .seal:active{transform:scale(.96)}
   .seal-mono{font-family:'Great Vibes',cursive;font-size:2.9rem;color:rgba(255,255,255,.9);line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.4)}
   .seal-sub{font-family:'Lato',sans-serif;font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:3px}
-
-  /* shards */
   .shards{position:absolute;inset:0;pointer-events:none}
   .shard{
     position:absolute;border-radius:50%;
@@ -236,44 +214,41 @@
   }
   .shard.fly{animation:shardfly .85s ease forwards}
   .shard:nth-child(1){--tx:-145px;--ty:-115px;--r:-35deg}
-  .shard:nth-child(2){--tx:155px; --ty:-95px; --r:48deg}
-  .shard:nth-child(3){--tx:-75px; --ty:155px; --r:22deg}
-  .shard:nth-child(4){--tx:125px; --ty:145px; --r:-58deg}
-  .shard:nth-child(5){--tx:-175px;--ty:25px;  --r:14deg;width:60px;height:60px}
-  .shard:nth-child(6){--tx:165px; --ty:18px;  --r:-22deg;width:60px;height:60px}
+  .shard:nth-child(2){--tx:155px;--ty:-95px;--r:48deg}
+  .shard:nth-child(3){--tx:-75px;--ty:155px;--r:22deg}
+  .shard:nth-child(4){--tx:125px;--ty:145px;--r:-58deg}
+  .shard:nth-child(5){--tx:-175px;--ty:25px;--r:14deg;width:60px;height:60px}
+  .shard:nth-child(6){--tx:165px;--ty:18px;--r:-22deg;width:60px;height:60px}
   @keyframes shardfly{
-    0%  {opacity:.88;transform:translate(-50%,-50%) scale(.65)}
-    30% {opacity:.75}
+    0%{opacity:.88;transform:translate(-50%,-50%) scale(.65)}
+    30%{opacity:.75}
     100%{opacity:0;transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) rotate(var(--r)) scale(.28)}
   }
   .seal.breaking{animation:sealcrack .55s ease forwards}
   @keyframes sealcrack{
-    0%  {transform:scale(1)}
-    12% {transform:scale(1.07)}
-    28% {transform:scale(.94) rotate(4deg)}
-    55% {transform:scale(1.09) rotate(-2deg);opacity:1}
+    0%{transform:scale(1)}
+    12%{transform:scale(1.07)}
+    28%{transform:scale(.94) rotate(4deg)}
+    55%{transform:scale(1.09) rotate(-2deg);opacity:1}
     100%{transform:scale(0) rotate(12deg);opacity:0}
   }
 
-  /* ==========================================================
+  /* ════════════════════════════════
      CONCEPT 3 — LOTUS BLOOM
-     ========================================================== */
+     ════════════════════════════════ */
   #op-lotus{
     background:radial-gradient(ellipse at center,#1a2e00 0%,#0d1600 70%);
     flex-direction:column;gap:26px;
   }
   .lotus{position:relative;width:240px;height:240px}
-
   .petal{
     position:absolute;width:50px;height:106px;
     border-radius:50% 50% 38% 38% / 58% 58% 42% 42%;
-    left:calc(50% - 25px);bottom:50%;/* bottom edge at flower centre */
+    left:calc(50% - 25px);bottom:50%;
     transform-origin:center bottom;
-    /* closed: all pointing up at angle 0 */
     transform:rotate(0deg);
     transition:transform 1.05s cubic-bezier(.34,1.56,.64,1);
   }
-  /* 8 petal colours — warm marigold palette */
   .petal:nth-child(1){background:linear-gradient(to top,#E65100,#FF8F00)}
   .petal:nth-child(2){background:linear-gradient(to top,#BF360C,#FF6D00)}
   .petal:nth-child(3){background:linear-gradient(to top,#E65100,#FFB300)}
@@ -282,17 +257,14 @@
   .petal:nth-child(6){background:linear-gradient(to top,#BF360C,#FF6D00)}
   .petal:nth-child(7){background:linear-gradient(to top,#E65100,#FFB300)}
   .petal:nth-child(8){background:linear-gradient(to top,#BF360C,#FF8F00)}
-
-  /* open: each petal rotates to its own angle */
-  .lotus.open .petal:nth-child(1){transform:rotate(0deg)  ;transition-delay:.00s}
-  .lotus.open .petal:nth-child(2){transform:rotate(45deg) ;transition-delay:.07s}
-  .lotus.open .petal:nth-child(3){transform:rotate(90deg) ;transition-delay:.14s}
+  .lotus.open .petal:nth-child(1){transform:rotate(0deg);transition-delay:.00s}
+  .lotus.open .petal:nth-child(2){transform:rotate(45deg);transition-delay:.07s}
+  .lotus.open .petal:nth-child(3){transform:rotate(90deg);transition-delay:.14s}
   .lotus.open .petal:nth-child(4){transform:rotate(135deg);transition-delay:.21s}
   .lotus.open .petal:nth-child(5){transform:rotate(180deg);transition-delay:.28s}
   .lotus.open .petal:nth-child(6){transform:rotate(225deg);transition-delay:.35s}
   .lotus.open .petal:nth-child(7){transform:rotate(270deg);transition-delay:.42s}
   .lotus.open .petal:nth-child(8){transform:rotate(315deg);transition-delay:.49s}
-
   .lotus-disc{
     position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
     width:76px;height:76px;border-radius:50%;z-index:10;
@@ -314,9 +286,9 @@
   #lotus-cta{transition:opacity .5s}
   .lotus.open ~ #lotus-cta{opacity:0}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      CONCEPT 4 — SACRED SCROLL
-     ========================================================== */
+     ════════════════════════════════ */
   #op-scroll{
     background:linear-gradient(155deg,#001520 0%,#00352E 60%,#001810 100%);
     flex-direction:column;gap:0;
@@ -338,7 +310,7 @@
     box-shadow:0 2px 6px rgba(0,0,0,.3);
   }
   .scroll-rod::before{left:-5px}
-  .scroll-rod::after {right:-5px}
+  .scroll-rod::after{right:-5px}
   .scroll-body{
     width:100%;overflow:hidden;max-height:0;
     background:linear-gradient(to bottom,#f5e6c8,#edd9a0,#f5e6c8);
@@ -355,7 +327,6 @@
   .scroll-ink .si-names{font-family:'Great Vibes',cursive;font-size:clamp(2rem,7vw,2.8rem);color:#4a2800;line-height:1.15}
   .scroll-ink .si-amp{font-family:'Great Vibes',cursive;font-size:clamp(1.3rem,4vw,1.9rem);color:#9A7209;display:block}
   .scroll-ink .si-date{font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#7A5000;margin-top:8px}
-  /* opened */
   .scroll-outer.open .scroll-rod-t{transform:translateY(-7px)}
   .scroll-outer.open .scroll-rod-b{transform:translateY(7px)}
   .scroll-outer.open .scroll-body{max-height:320px}
@@ -363,15 +334,14 @@
   #scroll-cta{margin-top:22px;transition:opacity .4s}
   .scroll-outer.open ~ #scroll-cta{opacity:0}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      CONCEPT 5 — GOLD ENVELOPE
-     ========================================================== */
+     ════════════════════════════════ */
   #op-env{
     background:radial-gradient(ellipse at 42% 42%,#3D2B00 0%,#1a1200 70%);
     flex-direction:column;gap:18px;
   }
   .env{position:relative;width:min(320px,87vw);height:min(220px,62vw)}
-
   .env-body{
     position:absolute;inset:32% 0 0 0;
     background:linear-gradient(to bottom,#f5e5c5,#edd9a0);
@@ -379,7 +349,6 @@
     border:1px solid rgba(212,175,55,.38);
     box-shadow:0 14px 50px rgba(0,0,0,.5);
   }
-  /* inner V fold lines */
   .env-body::before,.env-body::after{content:'';position:absolute;bottom:0;width:0;height:0}
   .env-body::before{
     left:0;
@@ -421,16 +390,15 @@
   .env-card .ec-names{font-family:'Great Vibes',cursive;font-size:clamp(1.1rem,4vw,1.55rem);color:#3D2B00;line-height:1.2}
   .env-card .ec-amp{font-family:'Great Vibes',cursive;font-size:clamp(.85rem,3vw,1.1rem);color:#8B6914}
   .env-card .ec-date{font-family:'Playfair Display',serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#8B6914;margin-top:5px}
-  /* opened */
   .env.open .env-flap{transform:perspective(550px) rotateX(-182deg)}
   .env.open .env-wax{transform:translateX(-50%) scale(0);opacity:0}
   .env.open .env-card{transform:translateY(calc(-100% - 18px));opacity:1}
   #env-cta{transition:opacity .4s}
   .env.open ~ #env-cta{opacity:0}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      INVITATION — HERO
-     ========================================================== */
+     ════════════════════════════════ */
   #invitation{opacity:0;transition:opacity .8s ease;pointer-events:none}
   #invitation.revealed{opacity:1;pointer-events:auto}
 
@@ -440,6 +408,18 @@
     position:relative;overflow:hidden;
     background:linear-gradient(150deg,var(--h1) 0%,var(--h2) 55%,var(--h3) 100%);
     transition:background .6s;
+  }
+  /* floating particles */
+  .sparkle{
+    position:absolute;pointer-events:none;border-radius:50%;
+    background:rgba(212,175,55,.7);
+    animation:floatUp var(--dur,8s) ease-in-out var(--del,0s) infinite;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) scale(1);opacity:0}
+    15%{opacity:.8}
+    85%{opacity:.4}
+    100%{transform:translateY(-80vh) scale(.4);opacity:0}
   }
   .hring{
     position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;
@@ -454,22 +434,26 @@
   .hc-tr{top:58px;right:16px;transform:scaleX(-1)}
   .hc-bl{bottom:68px;left:16px;transform:scaleY(-1)}
   .hc-br{bottom:68px;right:16px;transform:scale(-1,-1)}
-
-  .hi{position:relative;z-index:2;text-align:center;max-width:620px}
-  .hey{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.7rem,2vw,.86rem);letter-spacing:.34em;text-transform:uppercase;color:var(--a);opacity:0;animation:ri 1s ease .2s forwards;margin-bottom:15px}
-  .hrule{display:flex;align-items:center;justify-content:center;gap:14px;margin:13px 0;opacity:0}
-  .hrule::before,.hrule::after{content:'';display:block;height:1px;width:clamp(45px,9vw,85px);background:var(--a)}
-  .hrule.a1{animation:ri 1s ease .4s forwards}
-  .hrule.a2{animation:ri 1s ease 1.4s forwards}
-  .hrule::before,.hrule::after{background:var(--a)}
-  .hgem{color:var(--a);font-size:.95rem}
-  .hbride{font-family:'Great Vibes',cursive;font-size:clamp(3rem,11vw,5.5rem);color:#fff;line-height:1.05;text-shadow:0 4px 20px rgba(0,0,0,.25);opacity:0;animation:ri 1s ease .7s forwards}
-  .hamp  {font-family:'Great Vibes',cursive;font-size:clamp(1.7rem,6vw,3rem);color:var(--a);display:block;opacity:0;animation:ri 1s ease 1s forwards;margin:2px 0}
-  .hgroom{font-family:'Great Vibes',cursive;font-size:clamp(3rem,11vw,5.5rem);color:#fff;line-height:1.05;text-shadow:0 4px 20px rgba(0,0,0,.25);opacity:0;animation:ri 1s ease 1.2s forwards}
-  .hdate{font-family:'Playfair Display',serif;font-size:clamp(.7rem,1.9vw,.86rem);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:20px;opacity:0;animation:ri 1s ease 1.6s forwards}
+  .hi{position:relative;z-index:2;text-align:center;max-width:700px;width:100%}
+  .hey{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.7rem,2vw,.86rem);letter-spacing:.34em;text-transform:uppercase;color:var(--a);opacity:0;animation:ri 1s ease .2s forwards;margin-bottom:18px}
+  .hi-scene{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,32px);width:100%}
+  .hgroom,.hbride{
+    font-family:'Great Vibes',cursive;font-size:clamp(2.4rem,9vw,5rem);
+    color:#fff;line-height:1.05;text-shadow:0 4px 20px rgba(0,0,0,.25);
+    flex:1;margin:0;opacity:0;
+  }
+  .hgroom{text-align:right;animation:ri 1s cubic-bezier(.34,1.56,.64,1) .2s forwards}
+  .hbride{text-align:left;animation:ri 1s cubic-bezier(.34,1.56,.64,1) .55s forwards}
+  .hmandala{flex-shrink:0;width:clamp(100px,24vw,190px);opacity:0;animation:ri 1s ease .35s forwards}
+  .hmandala svg{width:100%;height:auto;display:block}
+  @media(max-width:480px){
+    .hi-scene{flex-direction:column;gap:4px}
+    .hgroom,.hbride{text-align:center;flex:unset}
+    .hmandala{width:clamp(110px,55vw,160px)}
+  }
+  .hdate{font-family:'Playfair Display',serif;font-size:clamp(.7rem,1.9vw,.86rem);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:22px;opacity:0;animation:ri 1s ease 1.4s forwards}
   .hdate strong{color:var(--a)}
   @keyframes ri{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
   .scue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:3px;opacity:0;animation:ri 1s ease 2s forwards}
   .scue span{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:3px}
   .chev{width:14px;height:14px;border-right:2px solid var(--a);border-bottom:2px solid var(--a);transform:rotate(45deg);margin-top:-7px;animation:bv 1.6s ease infinite}
@@ -477,9 +461,9 @@
   .chev:nth-child(4){animation-delay:.3s;opacity:.28}
   @keyframes bv{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
 
-  /* ==========================================================
+  /* ════════════════════════════════
      INVITATION — SECTIONS
-     ========================================================== */
+     ════════════════════════════════ */
   .sec{padding:68px 24px;max-width:760px;margin:0 auto}
   .sh{text-align:center;margin-bottom:46px}
   .seye{font-family:'Playfair Display',serif;font-style:italic;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--p);opacity:.7;margin-bottom:9px}
@@ -487,7 +471,6 @@
   .srule{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:18px}
   .srule::before,.srule::after{content:'';display:block;height:1px;width:48px;background:var(--bdr);opacity:.4}
   .srule-icon{color:var(--a);font-size:1rem}
-
   .sbg{background:var(--card);border-top:1px solid rgba(212,175,55,.17);border-bottom:1px solid rgba(212,175,55,.17)}
 
   /* scratch card */
@@ -511,6 +494,78 @@
   .dl{font-family:'Playfair Display',serif;font-size:.67rem;letter-spacing:.25em;text-transform:uppercase;color:var(--p);margin-bottom:6px}
   .dv{font-family:'Playfair Display',serif;font-size:1rem;color:var(--td);line-height:1.4}
   .dv small{display:block;font-family:'Lato',sans-serif;font-size:.73rem;opacity:.56;margin-top:3px}
+  .map-link{display:inline-block;margin-top:9px;font-family:'Lato',sans-serif;font-size:.72rem;letter-spacing:.06em;color:var(--a);text-decoration:none;opacity:.85}
+  .map-link:hover{opacity:1;text-decoration:underline}
+
+  /* ════════════════════════════════
+     TIMELINE
+     ════════════════════════════════ */
+  .tl-sec{padding:0}
+  .tl-sec .sec{padding-bottom:80px}
+  .tl-wrap{position:relative;padding:8px 0 4px}
+  .tl-wrap::before{
+    content:'';position:absolute;
+    left:50%;transform:translateX(-50%);
+    top:0;bottom:0;width:2px;
+    background:linear-gradient(to bottom,transparent,var(--bdr) 8%,var(--bdr) 92%,transparent);
+    opacity:.45;
+  }
+  .tl-day{
+    text-align:center;position:relative;margin:32px 0 24px;z-index:1;
+  }
+  .tl-day span{
+    display:inline-block;padding:6px 22px;
+    background:var(--bg);border:1px solid rgba(212,175,55,.45);border-radius:20px;
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--p);
+    transition:background .5s;
+  }
+  .tl-event{
+    display:flex;align-items:flex-start;gap:0;
+    margin-bottom:28px;position:relative;
+  }
+  /* Alternating: odd=content left, even=content right */
+  .tl-content{
+    flex:1;background:var(--card);
+    border:1px solid rgba(212,175,55,.18);border-radius:12px;
+    padding:18px 16px;
+  }
+  .tl-event .tl-content{padding-right:24px;text-align:right}
+  .tl-event.tl-right .tl-content{padding-left:24px;padding-right:18px;text-align:left}
+  .tl-center{
+    width:28px;flex-shrink:0;display:flex;
+    flex-direction:column;align-items:center;padding-top:16px;
+  }
+  .tl-dot{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--a);border:3px solid var(--bg);
+    box-shadow:0 0 0 2px var(--bdr);flex-shrink:0;
+    transition:background .5s,border-color .5s;
+  }
+  .tl-spacer{flex:1}
+  .tl-icon{font-size:1.35rem;margin-bottom:5px;display:block}
+  .tl-ename{
+    font-family:'Playfair Display',serif;font-size:1rem;
+    color:var(--td);line-height:1.3;margin-bottom:3px;
+  }
+  .tl-time{
+    font-family:'Lato',sans-serif;font-size:.67rem;
+    letter-spacing:.18em;text-transform:uppercase;
+    color:var(--a);font-weight:700;margin-bottom:4px;display:block;
+  }
+  .tl-desc{
+    font-size:.8rem;color:var(--td);opacity:.6;
+    line-height:1.55;margin-top:4px;
+  }
+  @media(max-width:540px){
+    .tl-wrap::before{left:13px;transform:none}
+    .tl-event{flex-direction:row}
+    .tl-spacer{display:none}
+    .tl-center{order:0;padding-top:14px}
+    .tl-content,.tl-event .tl-content,.tl-event.tl-right .tl-content{
+      order:1;padding-left:14px;padding-right:18px;text-align:left;
+    }
+  }
 
   /* rsvp */
   .rsec{background:linear-gradient(150deg,var(--h1) 0%,var(--h2) 60%,var(--h3) 100%);padding:78px 24px;text-align:center;transition:background .6s}
@@ -525,37 +580,71 @@
   .fn{font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--a);margin-bottom:6px}
   .fs{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)}
 
-  /* scroll reveal */
-  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
-  .rv.in{opacity:1;transform:none}
-  .stg>*{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
-  .stg.in>*:nth-child(1){opacity:1;transform:none;transition-delay:.07s}
-  .stg.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.17s}
-  .stg.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.27s}
-  .stg.in>*:nth-child(4){opacity:1;transform:none;transition-delay:.37s}
+  /* ════════════════════════════════
+     SCROLL REVEAL — cheerful spring
+     ════════════════════════════════ */
+  .rv{
+    opacity:0;
+    transform:translateY(30px) scale(.97);
+    transition:opacity .65s cubic-bezier(.34,1.56,.64,1),
+                transform .65s cubic-bezier(.34,1.56,.64,1);
+  }
+  .rv.in{opacity:1;transform:translateY(0) scale(1)}
+
+  .rv-l{
+    opacity:0;transform:translateX(-32px);
+    transition:opacity .6s cubic-bezier(.34,1.4,.64,1),
+                transform .6s cubic-bezier(.34,1.4,.64,1);
+  }
+  .rv-l.in{opacity:1;transform:none}
+
+  .rv-r{
+    opacity:0;transform:translateX(32px);
+    transition:opacity .6s cubic-bezier(.34,1.4,.64,1),
+                transform .6s cubic-bezier(.34,1.4,.64,1);
+  }
+  .rv-r.in{opacity:1;transform:none}
+
+  .stg>*{
+    opacity:0;transform:translateY(22px) scale(.96);
+    transition:opacity .55s cubic-bezier(.34,1.56,.64,1),
+                transform .55s cubic-bezier(.34,1.56,.64,1);
+  }
+  .stg.in>*:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+  .stg.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.14s}
+  .stg.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.23s}
+  .stg.in>*:nth-child(4){opacity:1;transform:none;transition-delay:.32s}
+
+  /* Timeline event reveal */
+  .tl-event{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .6s cubic-bezier(.34,1.4,.64,1),
+                transform .6s cubic-bezier(.34,1.4,.64,1);
+  }
+  .tl-event.in{opacity:1;transform:none}
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     CONCEPT TAB BAR
-     ============================================================ -->
+<!-- ── CONCEPT TAB BAR ── -->
 <nav class="cbar" role="tablist" aria-label="Opening interaction preview">
-  <button class="ctab on" data-c="doors"  data-theme=""        role="tab" aria-selected="true" >Double<br>Doors</button>
-  <button class="ctab"    data-c="seal"   data-theme="kanchi"  role="tab" aria-selected="false">Wax<br>Seal</button>
-  <button class="ctab"    data-c="lotus"  data-theme="marigold" role="tab" aria-selected="false">Lotus<br>Bloom</button>
-  <button class="ctab"    data-c="scroll" data-theme="peacock" role="tab" aria-selected="false">Sacred<br>Scroll</button>
-  <button class="ctab"    data-c="env"    data-theme="ivory"   role="tab" aria-selected="false">Gold<br>Envelope</button>
+  <button class="ctab on" data-c="doors"  data-theme=""         role="tab" aria-selected="true" >Double<br>Doors</button>
+  <button class="ctab" style="display:none" data-c="seal"   data-theme="kanchi"   role="tab" aria-selected="false">Wax<br>Seal</button>
+  <button class="ctab" style="display:none" data-c="lotus"  data-theme="marigold" role="tab" aria-selected="false">Lotus<br>Bloom</button>
+  <button class="ctab" style="display:none" data-c="scroll" data-theme="peacock"  role="tab" aria-selected="false">Sacred<br>Scroll</button>
+  <button class="ctab" style="display:none" data-c="env"    data-theme="ivory"    role="tab" aria-selected="false">Gold<br>Envelope</button>
 </nav>
 
 <button id="replay" aria-label="Replay opening">↺ Replay</button>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      OPENER 1 — DOUBLE DOORS
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div class="opener on" id="op-doors">
   <div class="door-topbar" aria-hidden="true">— పెళ్ళి పత్రిక —</div>
+
+  <!-- Doors -->
   <div class="dw" id="dw">
     <div class="door door-l" aria-hidden="true">
       <div class="door-panel t"></div>
@@ -568,25 +657,25 @@
       <div class="door-knob"></div>
     </div>
   </div>
-  <div class="doors-gem" aria-hidden="true">✦</div>
+
+  <div class="doors-gem" id="doors-gem" aria-hidden="true">✦</div>
   <div class="doors-cta" id="doors-cta">
     <span class="label">— Pelli Patrika —</span>
     <span class="tap">Tap to Open</span>
   </div>
-  <button class="enter-btn" id="doors-enter">Enter Invitation →</button>
 </div>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      OPENER 2 — WAX SEAL
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div class="opener" id="op-seal">
   <div class="seal-rings">
     <div class="sring sring1" aria-hidden="true"></div>
     <div class="sring sring2" aria-hidden="true"></div>
     <div class="seal" id="seal" role="button" tabindex="0" aria-label="Break the wax seal">
-      <span class="seal-mono">P &amp; A</span>
-      <span class="seal-sub">August 2026</span>
+      <span class="seal-mono">P &amp; K</span>
+      <span class="seal-sub">June 2026</span>
     </div>
     <div class="shards" aria-hidden="true">
       <div class="shard"></div><div class="shard"></div><div class="shard"></div>
@@ -598,9 +687,9 @@
 </div>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      OPENER 3 — LOTUS BLOOM
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div class="opener" id="op-lotus">
   <div class="lotus" id="lotus" role="button" tabindex="0" aria-label="Bloom the lotus">
     <div class="petal"></div><div class="petal"></div><div class="petal"></div>
@@ -608,9 +697,9 @@
     <div class="petal"></div><div class="petal"></div>
     <div class="lotus-disc" aria-hidden="true">✦</div>
     <div class="lotus-names" aria-live="polite">
-      <em>Priya</em>
+      <em>Kaushik</em>
       <em style="font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.65)">&amp;</em>
-      <em>Arjun</em>
+      <em>Pooja</em>
     </div>
   </div>
   <p class="cta-text" id="lotus-cta">Tap the lotus to bloom</p>
@@ -618,9 +707,9 @@
 </div>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      OPENER 4 — SACRED SCROLL
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div class="opener" id="op-scroll">
   <div class="scroll-outer" id="scroll-outer" role="button" tabindex="0" aria-label="Unroll the scroll">
     <div class="scroll-rod scroll-rod-t" aria-hidden="true"></div>
@@ -628,9 +717,9 @@
       <div class="scroll-ink">
         <p class="si-eye">— Pelli Patrika —</p>
         <div class="si-rule"></div>
-        <p class="si-names">Priya<span class="si-amp">&amp;</span>Arjun</p>
+        <p class="si-names">Kaushik<span class="si-amp">&amp;</span>Pooja</p>
         <div class="si-rule"></div>
-        <p class="si-date">August 24, 2026 &nbsp;·&nbsp; Hyderabad</p>
+        <p class="si-date">June 24, 2026 &nbsp;·&nbsp; Hyderabad</p>
       </div>
     </div>
     <div class="scroll-rod scroll-rod-b" aria-hidden="true"></div>
@@ -640,9 +729,9 @@
 </div>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      OPENER 5 — GOLD ENVELOPE
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div class="opener" id="op-env">
   <div class="env" id="env" role="button" tabindex="0" aria-label="Open the envelope">
     <div class="env-flap" aria-hidden="true">
@@ -652,8 +741,8 @@
     <div class="env-body" aria-hidden="true"></div>
     <div class="env-card" aria-hidden="true">
       <p class="ec-eye">Pelli Patrika</p>
-      <p class="ec-names">Priya <span class="ec-amp">&amp;</span> Arjun</p>
-      <p class="ec-date">August 24, 2026</p>
+      <p class="ec-names">Kaushik <span class="ec-amp">&amp;</span> Pooja</p>
+      <p class="ec-date">June 24, 2026</p>
     </div>
   </div>
   <p class="cta-text" id="env-cta">Tap to open your invitation</p>
@@ -661,9 +750,9 @@
 </div>
 
 
-<!-- ============================================================
+<!-- ════════════════════════════════════════════════
      INVITATION CONTENT
-     ============================================================ -->
+     ════════════════════════════════════════════════ -->
 <div id="invitation">
 
   <!-- HERO -->
@@ -673,14 +762,68 @@
     <span class="hcorner hc-tr" aria-hidden="true">❧</span>
     <span class="hcorner hc-bl" aria-hidden="true">❧</span>
     <span class="hcorner hc-br" aria-hidden="true">❧</span>
+    <!-- floating sparkles (positioned via JS) -->
+    <div id="sparkles" aria-hidden="true"></div>
     <div class="hi">
-      <p class="hey">— శ్రీమతే · Pelli Patrika —</p>
-      <div class="hrule a1"><span class="hgem">✦</span></div>
-      <h1 class="hbride">Priya</h1>
-      <span class="hamp">&amp;</span>
-      <h1 class="hgroom">Arjun</h1>
-      <div class="hrule a2"><span class="hgem" style="color:rgba(255,255,255,.28)">✦</span></div>
-      <p class="hdate"><strong>August 24, 2026</strong> &nbsp;·&nbsp; Hyderabad, Telangana</p>
+      <div class="hi-scene">
+        <h1 class="hgroom">Kaushik</h1>
+        <div class="hmandala" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="mlcg" cx="38%" cy="32%" r="65%">
+                <stop offset="0%" stop-color="#F5D060"/>
+                <stop offset="100%" stop-color="#9a720a"/>
+              </radialGradient>
+              <radialGradient id="mlglow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(212,175,55,0.18)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+              </radialGradient>
+            </defs>
+            <!-- soft glow -->
+            <circle cx="100" cy="100" r="95" fill="url(#mlglow)"/>
+            <!-- outer rings -->
+            <circle cx="100" cy="100" r="88" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.45"/>
+            <circle cx="100" cy="100" r="83" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.2"/>
+            <!-- outer petals (8) -->
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.28)" transform="rotate(0 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.2)" transform="rotate(45 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.28)" transform="rotate(90 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.2)" transform="rotate(135 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.28)" transform="rotate(180 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.2)" transform="rotate(225 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.28)" transform="rotate(270 100 100)"/>
+            <ellipse cx="100" cy="43" rx="9" ry="20" fill="rgba(212,175,55,0.2)" transform="rotate(315 100 100)"/>
+            <!-- mid petals (8, offset 22.5°) -->
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.42)" transform="rotate(22.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.32)" transform="rotate(67.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.42)" transform="rotate(112.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.32)" transform="rotate(157.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.42)" transform="rotate(202.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.32)" transform="rotate(247.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.42)" transform="rotate(292.5 100 100)"/>
+            <ellipse cx="100" cy="58" rx="6" ry="14" fill="rgba(212,175,55,0.32)" transform="rotate(337.5 100 100)"/>
+            <!-- inner petals (8) -->
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.55)" transform="rotate(0 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.42)" transform="rotate(45 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.55)" transform="rotate(90 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.42)" transform="rotate(135 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.55)" transform="rotate(180 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.42)" transform="rotate(225 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.55)" transform="rotate(270 100 100)"/>
+            <ellipse cx="100" cy="71" rx="4" ry="9" fill="rgba(245,208,96,0.42)" transform="rotate(315 100 100)"/>
+            <!-- concentric rings -->
+            <circle cx="100" cy="100" r="44" stroke="rgba(212,175,55,0.42)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="30" stroke="rgba(212,175,55,0.52)" stroke-width="1.5"/>
+            <!-- center filled disc -->
+            <circle cx="100" cy="100" r="24" fill="url(#mlcg)" opacity="0.88"/>
+            <circle cx="100" cy="100" r="16" fill="rgba(212,175,55,0.1)" stroke="#F5D060" stroke-width="1"/>
+            <!-- center star -->
+            <text x="100" y="107" text-anchor="middle" font-size="18" fill="#F5D060" font-family="serif" opacity="0.95">✦</text>
+          </svg>
+        </div>
+        <h1 class="hbride">Pooja</h1>
+      </div>
+      <p class="hdate"><strong>June 24, 2026</strong> &nbsp;·&nbsp; Hyderabad, Telangana</p>
     </div>
     <div class="scue" aria-hidden="true">
       <span>Scroll</span>
@@ -700,8 +843,8 @@
         <div class="cbox" id="cbox">
           <div class="crev">
             <p class="crev-lbl">Muhurtham</p>
-            <p class="crev-date">August 24, 2026</p>
-            <p class="crev-sub">7 : 15 AM &nbsp;·&nbsp; Hyderabad</p>
+            <p class="crev-date">June 24, 2026</p>
+            <p class="crev-sub">9 : 07 PM &nbsp;·&nbsp; Hyderabad</p>
           </div>
           <canvas id="sc" aria-hidden="true"></canvas>
         </div>
@@ -722,11 +865,131 @@
         <div class="srule"><span class="srule-icon">✦</span></div>
       </div>
       <div class="dgrid stg">
-        <div class="dc"><div class="di">📅</div><p class="dl">Date</p><p class="dv">August 24, 2026<small>Monday</small></p></div>
-        <div class="dc"><div class="di">⏰</div><p class="dl">Muhurtham</p><p class="dv">7:15 AM<small>Indian Standard Time</small></p></div>
-        <div class="dc"><div class="di">📍</div><p class="dl">Venue</p><p class="dv">Sri Venkateswara<br>Function Hall<small>Hyderabad, Telangana</small></p></div>
-        <div class="dc"><div class="di">🪔</div><p class="dl">Ceremony</p><p class="dv">Telugu Vedic<small>Brahmin Tradition</small></p></div>
+        <div class="dc"><div class="di">📅</div><p class="dl">Date</p><p class="dv">June 24, 2026<small>Wednesday</small></p></div>
+        <div class="dc"><div class="di">⏰</div><p class="dl">Muhurtham</p><p class="dv">9:07 PM<small>Indian Standard Time</small></p></div>
+        <div class="dc"><div class="di">📍</div><p class="dl">Venue</p><p class="dv">Sapthapadi Gardens<small>Hyderabad, Telangana</small></p><a href="https://maps.app.goo.gl/GeUUGMLzpvvyL4Sd9" target="_blank" rel="noopener" class="map-link">Get Directions ↗</a></div>
+        <div class="dc"><div class="di">🍽️</div><p class="dl">Dinner</p><p class="dv">7:00 PM<small>Celebration &amp; dinner</small></p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="sbg tl-sec">
+    <div class="sec">
+      <div class="sh rv">
+        <p class="seye">The Sacred Journey</p>
+        <h2 class="stit">Vivaha Karyakramam</h2>
+        <div class="srule"><span class="srule-icon">🪔</span></div>
+      </div>
+
+      <div class="tl-wrap">
+
+        <!-- Day Before -->
+        <div class="tl-day rv"><span>June 23, 2026 · Day Before</span></div>
+
+        <div class="tl-event">
+          <div class="tl-content">
+            <span class="tl-icon">🌺</span>
+            <span class="tl-time">9:00 AM</span>
+            <p class="tl-ename">Pellikuthuru &amp; Pellikoduku</p>
+            <p class="tl-desc">Traditional pre-wedding ceremony to bless and adorn the bride and groom separately with turmeric and sacred prayers.</p>
+          </div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+        <div class="tl-event tl-right">
+          <div class="tl-spacer"></div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-content">
+            <span class="tl-icon">🌙</span>
+            <span class="tl-time">4:00 PM</span>
+            <p class="tl-ename">Mehendi &amp; Sangeet</p>
+            <p class="tl-desc">An evening of henna artistry, music, and dance as families come together in joyful celebration.</p>
+          </div>
+        </div>
+
+        <!-- Wedding Day -->
+        <div class="tl-day rv"><span>June 24, 2026 · Wedding Day</span></div>
+
+        <div class="tl-event">
+          <div class="tl-content">
+            <span class="tl-icon">🌅</span>
+            <span class="tl-time">5:00 AM</span>
+            <p class="tl-ename">Mangalasnanam</p>
+            <p class="tl-desc">The auspicious pre-dawn bath with sacred oils and turmeric, purifying the bride and groom for the holy union.</p>
+          </div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+        <div class="tl-event tl-right">
+          <div class="tl-spacer"></div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-content">
+            <span class="tl-icon">🙏</span>
+            <span class="tl-time">6:00 AM</span>
+            <p class="tl-ename">Ganapati Puja</p>
+            <p class="tl-desc">Invoking the blessings of Lord Ganesha, the remover of obstacles, to ensure an auspicious start to the ceremony.</p>
+          </div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-content">
+            <span class="tl-icon">🚶</span>
+            <span class="tl-time">6:30 AM</span>
+            <p class="tl-ename">Kashi Yatra</p>
+            <p class="tl-desc">The groom sets off on a symbolic pilgrimage to Kashi, and the bride's father convinces him to return and marry his daughter.</p>
+          </div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+        <div class="tl-event tl-right">
+          <div class="tl-spacer"></div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-content">
+            <span class="tl-icon">💍</span>
+            <span class="tl-time">9:07 PM</span>
+            <p class="tl-ename">Muhurtham · Saptapadi</p>
+            <p class="tl-desc">The sacred auspicious moment — the couple takes seven steps together around the holy fire, making eternal vows of love and commitment.</p>
+          </div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-content">
+            <span class="tl-icon">🌾</span>
+            <span class="tl-time">8:00 AM</span>
+            <p class="tl-ename">Talambralu</p>
+            <p class="tl-desc">The bride and groom shower each other with sacred rice mixed with rose petals, symbolising prosperity and a life full of abundance.</p>
+          </div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+        <div class="tl-event tl-right">
+          <div class="tl-spacer"></div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-content">
+            <span class="tl-icon">🔴</span>
+            <span class="tl-time">8:30 AM</span>
+            <p class="tl-ename">Mangalasutra Dharana</p>
+            <p class="tl-desc">The groom ties the sacred mangalasutra (golden thread) around the bride's neck, completing their bond as husband and wife.</p>
+          </div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-content">
+            <span class="tl-icon">🍽️</span>
+            <span class="tl-time">7:00 PM</span>
+            <p class="tl-ename">Dinner</p>
+            <p class="tl-desc">Join us for an evening of celebration — dinner, music, and making memories with your loved ones.</p>
+          </div>
+          <div class="tl-center"><div class="tl-dot"></div></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+      </div><!-- /.tl-wrap -->
     </div>
   </section>
 
@@ -742,113 +1005,115 @@
   </section>
 
   <footer>
-    <p class="fn">Priya &amp; Arjun</p>
-    <p class="fs">With love &amp; blessings &nbsp;·&nbsp; August 2026 &nbsp;·&nbsp; Hyderabad</p>
+    <p class="fn">Kaushik &amp; Pooja</p>
+    <p class="fs">With love &amp; blessings &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; Hyderabad</p>
   </footer>
 </div>
 
 
 <script>
-/* ==============================================================
-   THEME MAP — each concept tab also switches the invitation theme
-   ============================================================== */
+/* ── THEME MAP ── */
 const THEMES = { doors:'', seal:'kanchi', lotus:'marigold', scroll:'peacock', env:'ivory' };
 
-/* ==============================================================
-   CONCEPT STATE
-   ============================================================== */
+/* ── CONCEPT STATE ── */
 let active = 'doors';
 const state = { doors:false, seal:false, lotus:false, scroll:false, env:false };
 
-/* ==============================================================
-   TAB SWITCHER
-   ============================================================== */
+/* ── SPARKLES ── */
+(function(){
+  const wrap = document.getElementById('sparkles');
+  if (!wrap) return;
+  for (let i=0;i<18;i++){
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    const sz = Math.random()*4+2;
+    s.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      left:${Math.random()*100}%;
+      bottom:${Math.random()*30}%;
+      --dur:${6+Math.random()*8}s;
+      --del:${Math.random()*8}s;
+      opacity:0;
+    `;
+    wrap.appendChild(s);
+  }
+})();
+
+/* ── TAB SWITCHER ── */
 document.querySelectorAll('.ctab').forEach(tab => {
   tab.addEventListener('click', () => {
     const c = tab.dataset.c;
     if (c === active) return;
 
-    document.querySelectorAll('.ctab').forEach(t => { t.classList.remove('on'); t.setAttribute('aria-selected','false'); });
-    tab.classList.add('on'); tab.setAttribute('aria-selected','true');
+    document.querySelectorAll('.ctab').forEach(t => {
+      t.classList.remove('on');
+      t.setAttribute('aria-selected','false');
+    });
+    tab.classList.add('on');
+    tab.setAttribute('aria-selected','true');
 
-    // hide current opener
-    const prev = document.getElementById('op-' + active);
-    prev.classList.remove('on','out');
-
-    // show new opener
+    document.getElementById('op-' + active).classList.remove('on','out');
     document.getElementById('op-' + c).classList.add('on');
     active = c;
 
-    // theme
     document.body.setAttribute('data-theme', THEMES[c]);
-
-    // re-hide invitation, replay btn
     document.getElementById('invitation').classList.remove('revealed');
     document.getElementById('replay').classList.remove('on');
 
-    // redraw scratch cover
     drawCover();
-
-    // reset new concept if it was already used
     resetConcept(c);
   });
 });
 
-/* ==============================================================
-   ENTER INVITATION (shared)
-   ============================================================== */
+/* ── SHARED ENTER LOGIC ── */
+function enterInvitation() {
+  const op = document.getElementById('op-' + active);
+  op.classList.add('out');
+  setTimeout(() => op.classList.remove('on','out'), 820);
+  document.getElementById('invitation').classList.add('revealed');
+  document.getElementById('replay').classList.add('on');
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
 function showEnter(btnId, delay) {
   setTimeout(() => {
     const btn = document.getElementById(btnId);
     btn.classList.add('on');
-    btn.addEventListener('click', () => {
-      const op = document.getElementById('op-' + active);
-      op.classList.add('out');
-      setTimeout(() => op.classList.remove('on','out'), 820);
-      document.getElementById('invitation').classList.add('revealed');
-      document.getElementById('replay').classList.add('on');
-      window.scrollTo({ top:0, behavior:'smooth' });
-    }, { once:true });
+    btn.addEventListener('click', enterInvitation, { once:true });
   }, delay);
 }
 
-/* ==============================================================
-   CONCEPT 1 — DOUBLE DOORS
-   ============================================================== */
-const dw = document.getElementById('dw');
+/* ── CONCEPT 1 — DOUBLE DOORS ── */
+const dw       = document.getElementById('dw');
 const doorsCta = document.getElementById('doors-cta');
+const doorsGem = document.getElementById('doors-gem');
 
 document.getElementById('op-doors').addEventListener('click', function() {
   if (state.doors) return;
   state.doors = true;
   dw.classList.add('opened');
   doorsCta.style.opacity = '0';
-  showEnter('doors-enter', 1100);
+  doorsGem.style.opacity = '0';
+  setTimeout(enterInvitation, 1100);
 });
 
-/* ==============================================================
-   CONCEPT 2 — WAX SEAL
-   ============================================================== */
+/* ── CONCEPT 2 — WAX SEAL ── */
 const sealEl = document.getElementById('seal');
-
 function breakSeal() {
   if (state.seal) return;
   state.seal = true;
   sealEl.classList.add('breaking');
-  document.querySelectorAll('#op-seal .shard').forEach((s, i) =>
-    setTimeout(() => s.classList.add('fly'), i * 38)
+  document.querySelectorAll('#op-seal .shard').forEach((s,i) =>
+    setTimeout(() => s.classList.add('fly'), i*38)
   );
   showEnter('seal-enter', 920);
 }
 sealEl.addEventListener('click', breakSeal);
 sealEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') breakSeal(); });
 
-/* ==============================================================
-   CONCEPT 3 — LOTUS BLOOM
-   ============================================================== */
+/* ── CONCEPT 3 — LOTUS ── */
 const lotusEl  = document.getElementById('lotus');
 const lotusCta = document.getElementById('lotus-cta');
-
 function bloomLotus() {
   if (state.lotus) return;
   state.lotus = true;
@@ -859,12 +1124,9 @@ function bloomLotus() {
 lotusEl.addEventListener('click', bloomLotus);
 lotusEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') bloomLotus(); });
 
-/* ==============================================================
-   CONCEPT 4 — SACRED SCROLL
-   ============================================================== */
+/* ── CONCEPT 4 — SCROLL ── */
 const scrollOuter = document.getElementById('scroll-outer');
 const scrollCta   = document.getElementById('scroll-cta');
-
 function openScroll() {
   if (state.scroll) return;
   state.scroll = true;
@@ -875,12 +1137,9 @@ function openScroll() {
 scrollOuter.addEventListener('click', openScroll);
 scrollOuter.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openScroll(); });
 
-/* ==============================================================
-   CONCEPT 5 — ENVELOPE
-   ============================================================== */
+/* ── CONCEPT 5 — ENVELOPE ── */
 const envEl  = document.getElementById('env');
 const envCta = document.getElementById('env-cta');
-
 function openEnv() {
   if (state.env) return;
   state.env = true;
@@ -891,15 +1150,13 @@ function openEnv() {
 envEl.addEventListener('click', openEnv);
 envEl.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openEnv(); });
 
-/* ==============================================================
-   RESET CONCEPT (when tab switches or replay)
-   ============================================================== */
+/* ── RESET ── */
 function resetConcept(c) {
   state[c] = false;
   if (c === 'doors') {
     dw.classList.remove('opened');
     doorsCta.style.opacity = '';
-    document.getElementById('doors-enter').classList.remove('on');
+    doorsGem.style.opacity = '';
   }
   if (c === 'seal') {
     sealEl.classList.remove('breaking');
@@ -923,21 +1180,16 @@ function resetConcept(c) {
   }
 }
 
-/* ==============================================================
-   REPLAY
-   ============================================================== */
+/* ── REPLAY ── */
 document.getElementById('replay').addEventListener('click', () => {
-  const op = document.getElementById('op-' + active);
-  op.classList.add('on');
+  document.getElementById('op-' + active).classList.add('on');
   document.getElementById('invitation').classList.remove('revealed');
   document.getElementById('replay').classList.remove('on');
   resetConcept(active);
   window.scrollTo({ top:0, behavior:'smooth' });
 });
 
-/* ==============================================================
-   SCRATCH CARD
-   ============================================================== */
+/* ── SCRATCH CARD ── */
 const canvas = document.getElementById('sc');
 const ctx    = canvas.getContext('2d');
 const cbox   = document.getElementById('cbox');
@@ -947,7 +1199,8 @@ let scratching=false, scratchDone=false;
 
 function sizeCanvas() {
   const r = cbox.getBoundingClientRect();
-  canvas.width = Math.round(r.width); canvas.height = Math.round(r.height);
+  canvas.width = Math.round(r.width);
+  canvas.height = Math.round(r.height);
   if (!scratchDone) drawCover();
 }
 
@@ -962,7 +1215,10 @@ function drawCover() {
   g.addColorStop(0,c1); g.addColorStop(1,c2);
   ctx.fillStyle=g; ctx.fillRect(0,0,canvas.width,canvas.height);
   ctx.globalAlpha=.1; ctx.fillStyle='#fff';
-  for(let x=12;x<canvas.width;x+=22) for(let y=12;y<canvas.height;y+=22){ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();}
+  for(let x=12;x<canvas.width;x+=22)
+    for(let y=12;y<canvas.height;y+=22){
+      ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();
+    }
   ctx.globalAlpha=1;
   ctx.fillStyle='rgba(255,255,255,.88)';
   ctx.font=`bold ${Math.floor(canvas.width*.063)}px 'Playfair Display',Georgia,serif`;
@@ -975,7 +1231,7 @@ function drawCover() {
 
 function xy(e){ const r=canvas.getBoundingClientRect(),s=e.touches?e.touches[0]:e; return{x:s.clientX-r.left,y:s.clientY-r.top}; }
 function scratch(x,y){ ctx.globalCompositeOperation='destination-out'; ctx.beginPath(); ctx.arc(x,y,30,0,Math.PI*2); ctx.fill(); }
-function pct(){ const d=ctx.getImageData(0,0,canvas.width,canvas.height).data; let c=0,s=16,t=d.length/(4*s); for(let i=3;i<d.length;i+=4*s)if(d[i]<128)c++; return(c/t)*100; }
+function pct(){ const d=ctx.getImageData(0,0,canvas.width,canvas.height).data; let c=0,s=16,t=d.length/(4*s); for(let i=3;i<d.length;i+=4*s) if(d[i]<128)c++; return(c/t)*100; }
 function check(){ const p=Math.min(pct(),100); pf.style.width=p+'%'; pf.parentElement.setAttribute('aria-valuenow',Math.round(p)); if(p>=50&&!scratchDone){scratchDone=true;canvas.style.opacity='0';shint.textContent='✦  Muhurtham Revealed  ✦';pf.style.width='100%';} }
 
 canvas.addEventListener('mousedown', e=>{scratching=true;const p=xy(e);scratch(p.x,p.y);check();});
@@ -986,19 +1242,37 @@ canvas.addEventListener('touchstart',e=>{e.preventDefault();scratching=true;cons
 canvas.addEventListener('touchmove', e=>{if(!scratching)return;e.preventDefault();const p=xy(e);scratch(p.x,p.y);check();},{passive:false});
 canvas.addEventListener('touchend',  ()=>{scratching=false;});
 
-/* ==============================================================
-   SCROLL REVEAL
-   ============================================================== */
+/* ── SCROLL REVEAL ── */
 const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:.12});
-document.querySelectorAll('.rv,.stg').forEach(el=>io.observe(el));
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
 
-/* ==============================================================
-   INIT
-   ============================================================== */
-window.addEventListener('load',  sizeCanvas);
-window.addEventListener('resize',sizeCanvas);
+document.querySelectorAll('.rv,.rv-l,.rv-r,.stg').forEach(el=>io.observe(el));
+
+/* Timeline events with staggered delay */
+const tlIo = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const items = e.target.querySelectorAll('.tl-event');
+      items.forEach((item,i)=>{
+        setTimeout(()=>item.classList.add('in'), i*90);
+      });
+      tlIo.unobserve(e.target);
+    }
+  });
+},{threshold:.05});
+
+const tlWrap = document.querySelector('.tl-wrap');
+if(tlWrap) tlIo.observe(tlWrap);
+
+/* ── INIT ── */
+window.addEventListener('load', sizeCanvas);
+window.addEventListener('resize', sizeCanvas);
 </script>
 </body>
 </html>
