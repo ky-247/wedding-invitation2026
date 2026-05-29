@@ -130,28 +130,67 @@
     transition:transform 1.4s cubic-bezier(.25,.1,.1,1);will-change:transform;
   }
   .door-l{
-    background:linear-gradient(to right,#3a0008 0%,#700010 55%,#8c0014 100%);
-    transform-origin:left center;border-right:2px solid #D4AF37;
+    background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 5px,rgba(0,0,0,.06) 5px,rgba(0,0,0,.06) 6px),
+      linear-gradient(to right,#2c0005 0%,#6a000e 45%,#880012 75%,#6a000e 100%);
+    transform-origin:left center;border-right:2.5px solid #D4AF37;
+    box-shadow:inset -6px 0 18px rgba(0,0,0,.35);
   }
   .door-r{
-    background:linear-gradient(to left,#3a0008 0%,#700010 55%,#8c0014 100%);
-    transform-origin:right center;border-left:2px solid #D4AF37;
+    background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 5px,rgba(0,0,0,.06) 5px,rgba(0,0,0,.06) 6px),
+      linear-gradient(to left,#2c0005 0%,#6a000e 45%,#880012 75%,#6a000e 100%);
+    transform-origin:right center;border-left:2.5px solid #D4AF37;
+    box-shadow:inset 6px 0 18px rgba(0,0,0,.35);
   }
   .door::before,.door::after{
-    content:'';position:absolute;border:1px solid rgba(212,175,55,.32);border-radius:4px;
+    content:'';position:absolute;
+    border:2px solid rgba(212,175,55,.55);
+    box-shadow:inset 0 3px 10px rgba(0,0,0,.45),inset 0 -1px 4px rgba(255,255,255,.06),0 1px 0 rgba(255,255,255,.04);
   }
-  .door::before{inset:8% 10% 54% 10%}
-  .door::after{inset:52% 10% 8% 10%}
-  .door-panel{position:absolute;border:1px solid rgba(212,175,55,.18);border-radius:2px}
-  .door-panel.t{inset:11% 14% 57% 14%}
-  .door-panel.b{inset:55% 14% 11% 14%}
-  .door-knob{
-    position:absolute;top:50%;width:15px;height:15px;border-radius:50%;
-    background:radial-gradient(circle,#F5D060 30%,#A0780A 100%);
-    box-shadow:0 2px 8px rgba(0,0,0,.5);transform:translateY(-50%);
+  .door::before{inset:7% 10% 53% 10%;border-radius:50% 50% 3px 3px / 20% 20% 3px 3px}
+  .door::after{inset:51% 10% 7% 10%;border-radius:3px}
+  .door-panel{
+    position:absolute;border:1px solid rgba(212,175,55,.28);
+    background:rgba(0,0,0,.22);
+    box-shadow:inset 0 3px 8px rgba(0,0,0,.4),inset 0 -1px 3px rgba(255,255,255,.05);
   }
-  .door-l .door-knob{right:13px}
-  .door-r .door-knob{left:13px}
+  .door-panel.t{inset:10% 14% 56% 14%;border-radius:50% 50% 2px 2px / 16% 16% 2px 2px}
+  .door-panel.b{inset:54% 14% 10% 14%;border-radius:3px}
+  .door-panel::before{
+    content:'✦';position:absolute;top:55%;left:50%;
+    transform:translate(-50%,-50%);
+    color:rgba(212,175,55,.6);font-size:clamp(10px,1.5vw,16px);line-height:1;
+  }
+  .door-panel.t::before{top:62%}
+  .door-knocker{
+    position:absolute;top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;align-items:center;z-index:2;
+  }
+  .door-l .door-knocker{right:8px}
+  .door-r .door-knocker{left:8px}
+  .knk-plate{
+    width:18px;height:28px;border-radius:9px;position:relative;z-index:2;
+    background:radial-gradient(ellipse at 38% 30%,#F5D060,#D4AF37 45%,#8B5E00 80%);
+    box-shadow:0 3px 10px rgba(0,0,0,.7),inset 0 1px 3px rgba(255,255,255,.45);
+  }
+  .knk-ring{
+    width:22px;height:22px;border-radius:50%;
+    border:3.5px solid #C9971D;
+    background:radial-gradient(circle,rgba(212,175,55,.12),transparent);
+    margin-top:-7px;position:relative;z-index:1;
+    box-shadow:0 4px 10px rgba(0,0,0,.65),inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .door-hinge{
+    position:absolute;width:13px;height:32px;
+    background:linear-gradient(to right,#6a4a00,#D4AF37 35%,#E8C84A 50%,#D4AF37 65%,#6a4a00);
+    border-radius:2px;
+    box-shadow:0 2px 8px rgba(0,0,0,.65),inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .door-l .door-hinge{left:5px}
+  .door-r .door-hinge{right:5px}
+  .door-hinge.th{top:16%}
+  .door-hinge.bh{top:64%}
   .door-topbar{
     position:absolute;top:0;left:0;right:0;height:40px;z-index:3;
     background:linear-gradient(to right,#2d0008,#6e1200,#D4AF37,#6e1200,#2d0008);
@@ -166,17 +205,21 @@
     transition:opacity .4s;
   }
   .doors-cta{
-    position:absolute;bottom:9%;left:50%;transform:translateX(-50%);
+    position:absolute;bottom:11%;left:50%;transform:translateX(-50%);
     z-index:10;text-align:center;pointer-events:none;transition:opacity .4s;
+    white-space:nowrap;
   }
-  .doors-cta .label{
-    font-family:'Playfair Display',serif;font-style:italic;font-size:.76rem;
-    letter-spacing:.3em;text-transform:uppercase;color:rgba(212,175,55,.75);
-    animation:pulse 2s ease infinite;display:block;margin-bottom:6px;
-  }
+  .doors-cta .label{display:none}
   .doors-cta .tap{
-    font-family:'Playfair Display',serif;font-size:clamp(1rem,3.5vw,1.5rem);
-    color:rgba(255,255,255,.85);
+    display:inline-block;
+    font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,3.2vw,1.4rem);
+    color:#fff;letter-spacing:.08em;
+    background:rgba(10,0,2,.55);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    padding:11px 30px;border-radius:50px;
+    border:1px solid rgba(212,175,55,.55);
+    box-shadow:0 0 18px rgba(212,175,55,.2),0 4px 16px rgba(0,0,0,.4);
+    animation:tapPulse 2.2s ease-in-out infinite;
   }
   .dw.opened .door-l{transform:rotateY(-108deg)}
   .dw.opened .door-r{transform:rotateY(108deg)}
@@ -460,6 +503,8 @@
   .chev:nth-child(3){animation-delay:.15s;opacity:.55}
   .chev:nth-child(4){animation-delay:.3s;opacity:.28}
   @keyframes bv{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+  @keyframes tapPulse{0%,100%{box-shadow:0 0 18px rgba(212,175,55,.2),0 4px 16px rgba(0,0,0,.4)}50%{box-shadow:0 0 42px rgba(212,175,55,.55),0 4px 20px rgba(0,0,0,.4)}}
+  .sinvite{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.9rem,6vw,3.4rem);color:var(--p);line-height:1.2;margin-bottom:0}
 
   /* ════════════════════════════════
      INVITATION — SECTIONS
@@ -647,14 +692,24 @@
   <!-- Doors -->
   <div class="dw" id="dw">
     <div class="door door-l" aria-hidden="true">
+      <div class="door-hinge th"></div>
+      <div class="door-hinge bh"></div>
       <div class="door-panel t"></div>
       <div class="door-panel b"></div>
-      <div class="door-knob"></div>
+      <div class="door-knocker">
+        <div class="knk-plate"></div>
+        <div class="knk-ring"></div>
+      </div>
     </div>
     <div class="door door-r" aria-hidden="true">
+      <div class="door-hinge th"></div>
+      <div class="door-hinge bh"></div>
       <div class="door-panel t"></div>
       <div class="door-panel b"></div>
-      <div class="door-knob"></div>
+      <div class="door-knocker">
+        <div class="knk-plate"></div>
+        <div class="knk-ring"></div>
+      </div>
     </div>
   </div>
 
@@ -860,8 +915,7 @@
   <section>
     <div class="sec">
       <div class="sh rv">
-        <p class="seye">You Are Cordially Invited</p>
-        <h2 class="stit">Vivaha Vivekaalu</h2>
+        <h2 class="sinvite">You Are Cordially Invited</h2>
         <div class="srule"><span class="srule-icon">✦</span></div>
       </div>
       <div class="dgrid stg">
@@ -870,89 +924,6 @@
         <div class="dc"><div class="di">📍</div><p class="dl">Venue</p><p class="dv">Sapthapadi Gardens<small>Hyderabad, Telangana</small></p><a href="https://maps.app.goo.gl/GeUUGMLzpvvyL4Sd9" target="_blank" rel="noopener" class="map-link">Get Directions ↗</a></div>
         <div class="dc"><div class="di">🍽️</div><p class="dl">Dinner</p><p class="dv">7:00 PM<small>Celebration &amp; dinner</small></p></div>
       </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="sbg tl-sec">
-    <div class="sec">
-      <div class="sh rv">
-        <p class="seye">The Sacred Journey</p>
-        <h2 class="stit">Vivaha Karyakramam</h2>
-        <div class="srule"><span class="srule-icon">🪔</span></div>
-      </div>
-
-      <div class="tl-wrap">
-
-        <div class="tl-day rv"><span>June 24, 2026 · Wedding Day</span></div>
-
-        <div class="tl-event">
-          <div class="tl-content">
-            <span class="tl-icon">🌺</span>
-            <span class="tl-time">7:40 AM</span>
-            <p class="tl-ename">Pellikoduku &amp; Pellikuthuru</p>
-            <p class="tl-desc">Traditional pre-wedding ceremony to bless and adorn the groom and bride separately with turmeric and sacred prayers.</p>
-          </div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-spacer"></div>
-        </div>
-
-        <div class="tl-event tl-right">
-          <div class="tl-spacer"></div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-content">
-            <span class="tl-icon">🚶</span>
-            <span class="tl-time">9:30 AM</span>
-            <p class="tl-ename">Snatakam &amp; Kashi Yatra</p>
-            <p class="tl-desc">The groom's sacred thread ceremony followed by his mock pilgrimage to Kashi, where the bride's father convinces him to return and marry.</p>
-          </div>
-        </div>
-
-        <div class="tl-event">
-          <div class="tl-content">
-            <span class="tl-icon">🤝</span>
-            <span class="tl-time">4:00 PM</span>
-            <p class="tl-ename">Edurukolu</p>
-            <p class="tl-desc">The auspicious welcome of the groom and his family by the bride's family — a joyful first meeting before the sacred ceremony.</p>
-          </div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-spacer"></div>
-        </div>
-
-        <div class="tl-event tl-right">
-          <div class="tl-spacer"></div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-content">
-            <span class="tl-icon">🎉</span>
-            <span class="tl-time">6:00 PM – 7:00 PM</span>
-            <p class="tl-ename">Reception</p>
-            <p class="tl-desc">Welcome family and friends as we celebrate together — music, dance, and joy before the auspicious muhurtham.</p>
-          </div>
-        </div>
-
-        <div class="tl-event">
-          <div class="tl-content">
-            <span class="tl-icon">🍽️</span>
-            <span class="tl-time">7:00 PM onwards</span>
-            <p class="tl-ename">Dinner</p>
-            <p class="tl-desc">Join us for an evening of celebration — dinner, music, and making memories with your loved ones.</p>
-          </div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-spacer"></div>
-        </div>
-
-        <div class="tl-event tl-right">
-          <div class="tl-spacer"></div>
-          <div class="tl-center"><div class="tl-dot"></div></div>
-          <div class="tl-content">
-            <span class="tl-icon">💍</span>
-            <span class="tl-time">9:07 PM</span>
-            <p class="tl-ename">Sumuhurtham · Saptapadi</p>
-            <p class="tl-desc">The sacred auspicious moment — the couple takes seven steps together around the holy fire, making eternal vows of love and commitment.</p>
-          </div>
-        </div>
-
-      </div><!-- /.tl-wrap -->
     </div>
   </section>
 
