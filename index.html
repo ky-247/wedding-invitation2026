@@ -537,6 +537,9 @@
   .dc{background:var(--card);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 16px;text-align:center;transition:transform .3s,box-shadow .3s}
   .dc:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
   .di{font-size:1.7rem;margin-bottom:9px}
+  .di-cal{display:inline-flex;flex-direction:column;align-items:center;border:1.5px solid var(--bdr);border-radius:7px;overflow:hidden;width:42px;margin-bottom:9px}
+  .di-cal-m{background:var(--p);color:#fff;font-family:'Lato',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 0;width:100%;text-align:center;font-weight:700}
+  .di-cal-d{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--td);padding:2px 0 3px;line-height:1}
   .dl{font-family:'Playfair Display',serif;font-size:.67rem;letter-spacing:.25em;text-transform:uppercase;color:var(--p);margin-bottom:6px}
   .dv{font-family:'Playfair Display',serif;font-size:1rem;color:var(--td);line-height:1.4}
   .dv small{display:block;font-family:'Lato',sans-serif;font-size:.73rem;opacity:.56;margin-top:3px}
@@ -921,7 +924,7 @@
         <div class="srule"><span class="srule-icon">✦</span></div>
       </div>
       <div class="dgrid stg">
-        <div class="dc"><div class="di">📅</div><p class="dl">Date</p><p class="dv">June 24, 2026<small>Wednesday</small></p></div>
+        <div class="dc"><div class="di-cal"><span class="di-cal-m">Jun</span><span class="di-cal-d">24</span></div><p class="dl">Date</p><p class="dv">June 24, 2026<small>Wednesday</small></p></div>
         <div class="dc"><div class="di">⏰</div><p class="dl">Muhurtham</p><p class="dv">9:07 PM<small>Indian Standard Time</small></p></div>
         <div class="dc"><div class="di">📍</div><p class="dl">Venue</p><p class="dv">Sapthapadi Gardens<small>Hyderabad, Telangana</small></p><a href="https://maps.app.goo.gl/GeUUGMLzpvvyL4Sd9" target="_blank" rel="noopener" class="map-link">Get Directions ↗</a></div>
         <div class="dc"><div class="di">🍽️</div><p class="dl">Dinner</p><p class="dv">7:00 PM<small>Celebration &amp; dinner</small></p></div>
